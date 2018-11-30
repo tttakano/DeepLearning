@@ -86,7 +86,7 @@ $
 	*
 
 # ファイルマーク:
-'0  8  1  ~/.gitignore
+'0  8  0  ~/.gitignore
 '1  1  0  ~/.gitignore
 '2  7  29  ~/.gitignore
 '3  4  24  ~/.gitignore
@@ -98,7 +98,7 @@ $
 '9  1  0  ~/chiner_seq2seq/dataset/vocab.en
 
 # ジャンプリスト (新しいものが先):
--'  8  1  ~/.gitignore
+-'  8  0  ~/.gitignore
 -'  1  0  ~/.gitignore
 -'  7  29  ~/.gitignore
 -'  4  24  ~/.gitignore
@@ -195,12 +195,11 @@ $
 -'  11  0  ~/chiner_seq2seqex/dataset/interen
 -'  300246  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
 -'  206607  68  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  1  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.ja
 
 # ファイル内マークの履歴 (新しいものから古いもの):
 
 > ~/.gitignore
-	"	8	1
+	"	8	0
 	^	8	2
 	.	8	1
 	+	1	25
