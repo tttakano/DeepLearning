@@ -86,24 +86,25 @@ $
 	*
 
 # ファイルマーク:
-'0  8  1  ~/.gitignore
-'1  1  0  ~/.gitignore
-'2  7  29  ~/.gitignore
-'3  4  24  ~/.gitignore
-'4  6  25  ~/.gitignore
-'5  5  23  ~/.gitignore
-'6  8  0  ~/DeepLeaning/dataset
-'7  8  1  ~/DeepLeaning/attention
-'8  18  0  ~/chiner_seq2seqex/seq2seqex.py
-'9  1  0  ~/chiner_seq2seq/dataset/vocab.en
+'0  10  8  ~/.gitignore
+'1  18  1  ~/.gitignore
+'2  1  0  ~/.gitignore
+'3  17  29  ~/.gitignore
+'4  14  24  ~/.gitignore
+'5  16  25  ~/.gitignore
+'6  15  23  ~/.gitignore
+'7  8  0  ~/DeepLeaning/dataset
+'8  8  1  ~/DeepLeaning/attention
+'9  18  0  ~/chiner_seq2seqex/seq2seqex.py
 
 # ジャンプリスト (新しいものが先):
--'  8  1  ~/.gitignore
+-'  10  8  ~/.gitignore
 -'  1  0  ~/.gitignore
--'  7  29  ~/.gitignore
--'  4  24  ~/.gitignore
--'  6  25  ~/.gitignore
--'  5  23  ~/.gitignore
+-'  18  1  ~/.gitignore
+-'  17  29  ~/.gitignore
+-'  14  24  ~/.gitignore
+-'  16  25  ~/.gitignore
+-'  15  23  ~/.gitignore
 -'  8  0  ~/DeepLeaning/dataset
 -'  1  0  ~/DeepLeaning/dataset/_train1000.en
 -'  1  0  ~/DeepLeaning/dataset
@@ -199,17 +200,19 @@ $
 # ファイル内マークの履歴 (新しいものから古いもの):
 
 > ~/.gitignore
-	"	8	1
-	^	8	2
-	.	9	0
+	"	10	8
+	^	10	9
+	.	10	8
 	+	1	25
-	+	5	24
-	+	6	0
-	+	3	23
-	+	4	24
-	+	7	30
-	+	8	2
-	+	9	0
+	+	15	24
+	+	16	0
+	+	13	23
+	+	14	24
+	+	17	30
+	+	18	2
+	+	19	0
+	+	4	19
+	+	10	8
 
 > ~/DeepLeaning/dataset/_train1000.en
 	"	1	0
