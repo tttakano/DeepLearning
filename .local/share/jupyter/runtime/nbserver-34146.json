@@ -1,0 +1,11 @@
+{
+  "base_url": "/user/ttakano/",
+  "hostname": "127.0.0.1",
+  "notebook_dir": "/home/ttakano",
+  "password": false,
+  "pid": 34146,
+  "port": 42514,
+  "secure": false,
+  "token": "",
+  "url": "http://127.0.0.1:42514/user/ttakano/"
+}

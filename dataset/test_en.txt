@@ -1,0 +1,38 @@
+Somewhat surprisingly , the radial kernel does a little worse on this data set than the linear kernel , which is the opposite of what we saw from our example of nonlinear data.
+And that is an example of a broader lesson you’ll absorb with more experience working with data.
+The ideal model for your problem depends on the structure of your data.
+In this case , the inferior performance of the radial kernel SVM suggests that the ideal decision boundary for this problem might really be linear.
+that is also supported by the fact that we’ve already seen that logistic regression is beating both the linear and the radial kernel SVMs.
+These sorts of observations are the most interesting ones we can make while comparing algorithms on a fixed data set.
+Because we learn something about the true structure of the data from the misfit of our models.
+
+But before we stop fitting models and decide to stick with logistic regression , let’s try the method that works best with nonlinear data. kNN.
+Here we fit kNN using 50 neighbors for each prediction.
+
+As we can see , we get a 14% error from kNN , which is further evidence that linear models are better for classifying spam than nonlinear models.
+And because kNN doesn’t take so long to fit on this data set , we will also try several values for k to see which performs best.
+
+With tuning , we see that we can get a 9% error rate from kNN.
+This is halfway between the performance we’ve seen for SVMs and logistic regression , as you can confirm by looking at Table 12-1 , which collates the error rates we obtained with each of the four algorithms we’ve used on this spam data set.
+
+In the end , it seems that the best approach for this problem is to use logistic regression with a tuned hyperparameter for regularization.
+And that is actually a reasonable conclusion because industrial-strength spam filters have all switched over to logistic regression and left the Naive Bayes approach we described in Chapter 3 behind.
+For reasons that aren’t entirely clear to us , logistic regression simply works better for this sort of problem.
+
+What broader lessons should you take away from this example.
+We hope you’ll walk away with several lessons in mind.
+(1) you should always try multiple algorithms on any practical data set , especially because they’re so easy to experiment with in R.
+(2) the types of algorithms that work best are problem-specific.
+and (3) the quality of the results you get from a model are influenced by the structure of the data and also by the amount of work you’re willing to put into setting hyperparameters , so don’t shirk the hyperparameter tuning step if you want to get strong results.
+
+To hammer those lessons home , we encourage you to go back through the four models we’ve fit in this chapter and set the hyperparameters systematically using repeated splits of the training data.
+After that , we encourage you to try the polynomial and sigmoid kernels that we neglected while working with the spam data.
+If you do both of these things , you’ll get a lot of experience with the nuts and bolts of fitting complicated models to real-world data , and you’ll learn to appreciate how differently the models we’ve shown you in this book can perform on a fixed data set.
+
+On that note , we’ve come to the end of our final chapter and the book as a whole.
+We hope you’ve discovered the beauty of machine learning and gained an appreciation for the broad ideas that come up again and again when trying to build predictive models of data.
+We hope you’ll go on to study machine learning from the classic mathematical textbooks such as Hastie et al.[HTF09] or Bishop [Bis06] , which cover the material we’ve described in a practical fashion from a theoretical bent.
+The best machine learning practitioners are those with both practical and theoretical experience , so we encourage you to go out and develop both.
+
+Along the way , have fun hacking data.
+You have a lot of powerful tools , so go apply them to questions you’re interested in.

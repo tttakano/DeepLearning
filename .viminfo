@@ -1,0 +1,765 @@
+# この viminfo ファイルは Vim 7.4 によって生成されました.
+# 変更する際には十分注意してください!
+
+# このファイルが書かれた時の 'encoding' の値
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# 最後の 検索パターン:
+~MSle0~/\n\n
+
+# 最後の Substitute 検索パターン:
+~MSle0&\n\n
+
+# 最後に置換された文字列:
+$
+
+# コマンドライン 項目の履歴 (新しいものから古いものへ):
+:q
+:wq
+:q!
+:%s/\n\n/\r** /g
+:%s/\n\n/\r **/g
+:p
+:%s/aa/b/g
+:%s/\n\n/\r**/g
+:%s/\n\n/\rqq/g
+:%s/\n\n/\nqq/g
+:%s/\n\n/\n** /g
+:%s/\n\n/** /g
+:%s/ses/yuki/g
+:%s/\n\n//g
+:%s/\n//g
+:q!wq
+
+# 検索文字列 項目の履歴 (新しいものから古いものへ):
+? @$
+? \n\n
+? \<雪舟\>
+? aa
+? ses
+??^:
+?/^:
+?/:/n
+?/s/:/n
+? \n
+
+# 式 項目の履歴 (新しいものから古いものへ):
+
+# 入力行 項目の履歴 (新しいものから古いものへ):
+
+# 入力行 項目の履歴 (新しいものから古いものへ):
+
+# レジスタ:
+""0	CHAR	0
+	*
+"1	LINE	0
+	messhu
+	
+	the artist ' s life
+	
+	a rat drawn in tears
+	
+	deification
+	
+	national treasures
+	
+	major important cultural properties
+	
+	references
+	
+	known as sesshu ( 0000 - 0000 ) , he was an ink painter and zen monk active in the muromachi period in the latter half of the 00th century , and was called a master painter .
+	he revolutionized the japanese ink painting .
+	
+	he was given the posthumous name " toyo " or " sesshu ( 拙宗 ) . "
+	born in bicchu province , he moved to suo province after entering sshokoku-ji temple in kyoto .
+	later he accompanied a mission to ming dynasty china and learned chinese ink painting .
+"2	LINE	0
+	      logs.append(log)#log
+"3	LINE	0
+	      log={"epoch":epoch, "loss":loss} #log
+"g	CHAR	0
+	
+"-	CHAR	0
+	*
+
+# ファイルマーク:
+'0  1  0  ~/.gitignore
+'1  7  29  ~/.gitignore
+'2  4  24  ~/.gitignore
+'3  6  25  ~/.gitignore
+'4  5  23  ~/.gitignore
+'5  8  0  ~/DeepLeaning/dataset
+'6  8  1  ~/DeepLeaning/attention
+'7  18  0  ~/chiner_seq2seqex/seq2seqex.py
+'8  1  0  ~/chiner_seq2seq/dataset/vocab.en
+'9  53  0  ~/chiner_seq2seqex/dataset/train.en
+
+# ジャンプリスト (新しいものが先):
+-'  1  0  ~/.gitignore
+-'  7  29  ~/.gitignore
+-'  4  24  ~/.gitignore
+-'  6  25  ~/.gitignore
+-'  5  23  ~/.gitignore
+-'  8  0  ~/DeepLeaning/dataset
+-'  1  0  ~/DeepLeaning/dataset/_train1000.en
+-'  1  0  ~/DeepLeaning/dataset
+-'  8  1  ~/DeepLeaning/attention
+-'  18  0  ~/chiner_seq2seqex/seq2seqex.py
+-'  1  0  ~/chiner_seq2seqex/seq2seqex.py
+-'  1  0  ~/chiner_seq2seq/dataset/vocab.en
+-'  53  0  ~/chiner_seq2seqex/dataset/train.en
+-'  1  0  ~/chiner_seq2seqex/dataset/train.en
+-'  53  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
+-'  1  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
+-'  13  0  ~/chiner_seq2seq/dataset/pncKyotoAll.en
+-'  1  0  ~/chiner_seq2seq/dataset/pncKyotoAll.en
+-'  1  0  ~/chiner_seq2seq/dataset/train.jp
+-'  119  0  ~/chiner_seq2seqex/mylog.txt
+-'  1  0  ~/chiner_seq2seqex/mylog.txt
+-'  29  0  ~/chiner_seq2seqex/mylog.txt
+-'  1  0  ~/chiner_seq2seqex/result/log
+-'  40  0  ~/chiner_seq2seqex/result/log
+-'  1  0  ~/chiner_seq2seqex/dataset/inter
+-'  1  0  ~/chiner_seq2seqex/dataset/sepalate_train.en
+-'  6  36  ~/chiner_seq2seqex/dataset/train.en
+-'  83  0  ~/chiner_seq2seq/result/100_500/snapshot_epoch-99
+-'  1  0  ~/chiner_seq2seq/result/100_500/snapshot_epoch-99
+-'  158  0  ~/chiner_seq2seqex/dataset/train.en
+-'  1  0  ~/chiner_seq2seqex/dataset/train..
+-'  1144  0  ~/chiner_seq2seqex/mylog.txt
+-'  4013  0  ~/chiner_seq2seqex/mylog.txt
+-'  243  43  ~/chiner_seq2seqex/seq2seqex.py
+-'  58  0  ~/chiner_seq2seqex/seq2seqex.py
+-'  103  0  ~/chiner_seq2seqex/seq2seqex.py
+-'  1  0  ~/chiner_seq2seqex/seq2seqex
+-'  1  0  ~/chiner_seq2seqex/dataset/vocab.en
+-'  40000  0  ~/chiner_seq2seqex/dataset/vocab.jp
+-'  1  0  ~/chiner_seq2seqex/dataset/vocab.jp
+-'  40000  0  ~/chiner_seq2seqex/dataset/vocab.en
+-'  429519  0  ~/chiner_seq2seqex/dataset/train.jp
+-'  1  0  ~/chiner_seq2seqex/dataset/train.jp
+-'  429518  0  ~/chiner_seq2seqex/dataset/train.en
+-'  86  4  ~/chiner_seq2seqex/dataset/wmt_preprocess.py
+-'  1  0  ~/chiner_seq2seqex/dataset/wmt_preprocess.py
+-'  64  4  ~/chiner_seq2seqex/dataset/wmt_preprocess.py
+-'  11  0  ~/chiner_seq2seqex/dataset/wmt_preprocess.py
+-'  21475  0  ~/chiner_seq2seqex/dataset/test.jp
+-'  1  0  ~/chiner_seq2seqex/dataset/test.jp
+-'  1  0  ~/chiner_seq2seqex/dataset/test.j@
+-'  21475  0  ~/chiner_seq2seqex/dataset/test.en
+-'  1  0  ~/chiner_seq2seqex/dataset/test.en
+-'  429519  0  ~/chiner_seq2seqex/dataset/tmp/ParsedContextLongCuttedAll.en
+-'  1  0  ~/chiner_seq2seqex/dataset/tmp/ParsedContextLongCuttedAll.en
+-'  1  2  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  429519  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  429519  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
+-'  429520  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  429520  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
+-'  429506  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
+-'  653926  0  ~/chiner_seq2seqex/dataset/interjp
+-'  1  0  ~/chiner_seq2seqex/dataset/interjp
+-'  653926  0  ~/chiner_seq2seqex/dataset/interen
+-'  1  0  ~/chiner_seq2seqex/dataset/interen
+-'  429479  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  429516  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
+-'  293227  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
+-'  1  0  ~/chiner_seq2seqex/dataset/testen
+-'  429519  0  ~/chiner_seq2seqex/dataset/testen
+-'  1  2  ~/chiner_seq2seqex/dataset/testjp
+-'  429519  0  ~/chiner_seq2seqex/dataset/testjp
+-'  293227  62  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  9  55  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  293223  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  293215  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  19  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  72  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  484615  158  ~/chiner_seq2seqex/dataset/pncKyotoAll.jp
+-'  1  0  ~/chiner_seq2seqex/dataset/pncKyotoAll.jp
+-'  1  0  ~/chiner_seq2seqex/dataset/pncKyotoAll.ja
+-'  484664  0  ~/chiner_seq2seqex/dataset/pncKyotoAll.en
+-'  1  0  ~/chiner_seq2seqex/dataset/pncKyotoAll.en
+-'  293201  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  653851  0  ~/chiner_seq2seqex/dataset/interjp
+-'  429479  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
+-'  709062  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.jp
+-'  1  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.jp
+-'  709062  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.en
+-'  1  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.en
+-'  293204  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  653853  0  ~/chiner_seq2seqex/dataset/interjp
+-'  653914  0  ~/chiner_seq2seqex/dataset/interen
+-'  11  0  ~/chiner_seq2seqex/dataset/interen
+-'  300246  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
+-'  206607  68  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  1  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.ja
+
+# ファイル内マークの履歴 (新しいものから古いもの):
+
+> ~/.gitignore
+	"	1	0
+	^	7	30
+	.	7	23
+	+	1	25
+	+	5	24
+	+	6	0
+	+	3	23
+	+	4	24
+	+	7	23
+
+> ~/DeepLeaning/dataset/_train1000.en
+	"	1	0
+
+> ~/chiner_seq2seqex/seq2seqex.py
+	"	18	0
+	^	18	1
+	.	18	0
+	+	18	0
+
+> ~/chiner_seq2seq/dataset/vocab.en
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/train.en
+	"	53	0
+	^	6	37
+	.	6	37
+	+	6	37
+
+> ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
+	"	53	0
+	^	1	3
+	.	1	2
+	+	1	0
+	+	300246	0
+	+	1	0
+	+	429520	0
+	+	1	2
+
+> ~/chiner_seq2seq/dataset/pncKyotoAll.en
+	"	13	0
+
+> ~/chiner_seq2seq/dataset/train.jp
+	"	1	0
+
+> ~/chiner_seq2seqex/mylog.txt
+	"	119	0
+
+> ~/chiner_seq2seqex/result/log
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/inter
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/sepalate_train.en
+	"	1	0
+
+> ~/chiner_seq2seq/result/100_500/snapshot_epoch-99
+	"	83	0
+
+> ~/chiner_seq2seqex/dataset/train..
+	"	1	0
+
+> ~/chiner_seq2seqex/seq2seqex
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/vocab.en
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/vocab.jp
+	"	40000	0
+
+> ~/chiner_seq2seqex/dataset/train.jp
+	"	429519	0
+
+> ~/chiner_seq2seqex/dataset/wmt_preprocess.py
+	"	86	4
+
+> ~/chiner_seq2seqex/dataset/test.jp
+	"	21475	0
+
+> ~/chiner_seq2seqex/dataset/test.j@
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/test.en
+	"	21475	0
+
+> ~/chiner_seq2seqex/dataset/tmp/ParsedContextLongCuttedAll.en
+	"	429519	0
+
+> ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+	"	1	2
+	^	1	3
+	.	1	2
+	+	1	2
+	+	293227	65
+	+	1	0
+	+	429519	65
+	+	1	2
+
+> ~/chiner_seq2seqex/dataset/interjp
+	"	653926	0
+
+> ~/chiner_seq2seqex/dataset/interen
+	"	653926	0
+
+> ~/chiner_seq2seqex/dataset/testen
+	"	1	0
+	^	1	3
+	.	1	2
+	+	1	0
+	+	429520	0
+	+	1	2
+
+> ~/chiner_seq2seqex/dataset/testjp
+	"	1	2
+	^	1	3
+	.	1	2
+	+	1	0
+	+	429519	65
+	+	429520	0
+	+	1	2
+
+> ~/chiner_seq2seqex/dataset/pncKyotoAll.jp
+	"	484615	158
+
+> ~/chiner_seq2seqex/dataset/pncKyotoAll.ja
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/pncKyotoAll.en
+	"	484664	0
+
+> ~/chiner_seq2seqex/dataset/pwcKyotoAll.jp
+	"	709062	0
+	^	1647	0
+	.	1646	28
+	+	1646	28
+
+> ~/chiner_seq2seqex/dataset/pwcKyotoAll.en
+	"	709062	0
+	^	1647	0
+	.	1646	70
+	+	1646	70
+
+> ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.ja
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/test
+	"	1	0
+	.	1	0
+	+	1	0
+	+	439463	0
+	+	1	0
+	+	1	0
+
+> ~/chiner_seq2seqex/dataset/ParsedWithContextLongCuttedAll.en
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/a
+	"	5	0
+	^	5	1
+	.	5	0
+	+	11	0
+	+	13	1
+	+	9	0
+	+	5	0
+
+> ~/chiner_seq2seqex/dataset/viaaaa
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/output
+	"	19	0
+
+> ~/chiner_seq2seqex/dataset/test.txt
+	"	21	0
+	^	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/dataset/ncKyotoAll.en
+	"	484648	0
+
+> ~/chiner_seq2seq/seq2seq.py
+	"	212	59
+	^	212	60
+	.	212	59
+	+	1	1
+	+	212	59
+
+> ~/chiner_seq2seq/dataset/pncKyotoAll.
+	"	1	0
+
+> ~/dataset/ncKyototra.jp
+	"	1	0
+
+> ~/dataset/wcKyotoAll.jp
+	"	16	0
+
+> ~/dataset/wcKyotoAll.en
+	"	1	0
+
+> ~/dataset/wcKyototra.jp
+	"	1	0
+
+> ~/dataset/Kyoto-Corpus/wcKyotoAll.jp
+	"	13	15
+
+> ~/chiner_seq2seqex/result/log.txt
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/pwcKyotoAll.ja
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/pwcKyototes.en
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/pwcKyototes.jp
+	"	1	0
+
+> ~/chiner_seq2seq/result/log
+	"	10619	4
+
+> ~/chiner_seq2seq/dataset/pncKyototes.en
+	"	43619	0
+
+> ~/chiner_seq2seq/dataset/pncKyototra.en
+	"	392579	0
+
+> ~/chiner_seq2seq/result/unit700/log
+	"	9257	0
+
+> ~/chiner_seq2seq/result/unit500/log
+	"	5966	0
+
+> ~/chiner_seq2seq/log.txt
+	"	1	0
+
+> ~/encdec/take.txt
+	"	1	0
+
+> ~/chiner_seq2seq/time.txt
+	"	1	0
+
+> ~/chiner_seq2seq/time.py
+	"	4	10
+	^	4	11
+	.	4	10
+	+	7	17
+	+	4	10
+
+> ~/chiner_seq2seq/dataset/pncKyotoAll.jp
+	"	436198	0
+
+> ~/chiner_seq2seq/dataset/vocab.jp
+	"	140	0
+
+> ~/attention/attention.py
+	"	36	62
+	^	36	63
+	.	36	62
+	+	15	14
+	+	16	15
+	+	36	62
+
+> ~/encdec/encdec.py
+	"	19	15
+	^	19	16
+	.	19	15
+	+	16	14
+	+	13	32
+	+	14	36
+	+	17	14
+	+	18	15
+	+	17	14
+	+	18	15
+	+	35	62
+	+	17	14
+	+	18	15
+	+	216	13
+	+	240	44
+	+	240	22
+	+	240	42
+	+	262	2
+	+	268	14
+	+	268	35
+	+	268	1
+	+	262	20
+	+	268	28
+	+	268	0
+	+	265	0
+	+	262	20
+	+	268	14
+	+	9	18
+	+	13	25
+	+	14	31
+	+	19	14
+	+	17	14
+	+	18	15
+	+	19	16
+	+	13	27
+	+	14	27
+	+	13	30
+	+	14	30
+	+	17	14
+	+	18	15
+	+	228	3
+	+	227	4
+	+	226	3
+	+	234	14
+	+	238	29
+	+	240	0
+	+	242	6
+	+	260	3
+	+	259	4
+	+	258	4
+	+	265	38
+	+	13	28
+	+	14	28
+	+	19	16
+	+	13	34
+	+	14	34
+	+	12	15
+	+	13	35
+	+	14	35
+	+	13	31
+	+	14	36
+	+	13	28
+	+	19	14
+	+	12	16
+	+	13	34
+	+	14	25
+	+	13	36
+	+	14	36
+	+	13	36
+	+	19	15
+	+	12	15
+	+	13	28
+	+	14	23
+	+	17	14
+	+	18	15
+	+	17	14
+	+	18	15
+	+	17	14
+	+	18	14
+	+	19	15
+
+> ~/pro.py
+	"	3	0
+	^	13	0
+	.	13	0
+	+	11	12
+	+	12	14
+	+	3	22
+	+	12	12
+	+	13	0
+
+> ~/dataset/Kyoto-Corpus/ncKyotoAll.jp
+	"	27920	0
+
+> ~/dataset/Kyoto-Corpus/PNM/PNM02763.xml
+	"	469	5
+	^	469	6
+	.	470	0
+	+	470	0
+
+> ~/dataset/Kyoto-Corpus/HST/HST00963.xml
+	"	49	7
+	^	429	6
+	.	430	0
+	+	429	6
+	+	430	0
+
+> ~/dataset/Kyoto-Corpus/GNM/GNM00155.xml
+	"	2811	2627
+	^	2811	2628
+	.	2811	2628
+	+	2811	2628
+
+> ~/dataset/Kyoto-Corpus/KyotoAll.jp
+	"	279	0
+
+> ~/hoge.txt
+	"	1	9
+	^	1	10
+	.	1	9
+	+	1	9
+
+> ~/dl1.cgi
+	"	34	0
+
+> ~/encdec/test_enc.py
+	"	14	15
+	^	13	31
+	.	13	30
+	+	13	30
+
+> ~/encdec/6000-700-700/6000-700-700.001.srcvocab
+	"	1	0
+
+> ~/encdec/generate.txt
+	"	19	0
+
+> ~/dataset/ttrain_
+	"	1	0
+
+> ~/expriment/experiment.py
+	"	14	34
+	^	14	35
+	.	14	34
+	+	1	0
+	+	17	14
+	+	18	15
+	+	13	32
+	+	14	32
+	+	17	14
+	+	18	15
+	+	35	62
+	+	17	14
+	+	18	15
+	+	17	16
+	+	18	15
+	+	17	14
+	+	18	15
+	+	17	14
+	+	18	15
+	+	19	14
+	+	17	14
+	+	18	15
+	+	16	14
+	+	17	14
+	+	16	14
+	+	18	15
+	+	13	27
+	+	14	27
+	+	17	14
+	+	18	15
+	+	16	14
+	+	13	28
+	+	14	31
+	+	19	14
+	+	13	37
+	+	14	36
+	+	13	31
+	+	14	18
+	+	13	34
+	+	14	34
+
+> ~/expriment/generate.txt
+	"	8	0
+
+> ~/expriment/test_ex.py
+	"	13	9
+	^	13	10
+	.	13	30
+	+	12	15
+	+	13	28
+	+	14	14
+	+	13	30
+
+> ~/encdec/test.py
+	"	29	0
+	^	14	37
+	.	14	36
+	+	12	15
+	+	13	28
+	+	14	36
+
+> ~/encdec/gene
+	"	1	0
+
+> ~/dataset/generate.txt
+	"	1	0
+
+> ~/dataset/nctrain_en.txt
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/dataset/train_ja.txt
+	"	103058	0
+
+> ~/dataset/train_en.txt
+	"	111378	0
+
+> ~/dataset/test_en.txt
+	"	30	0
+	^	41	88
+	.	41	87
+	+	2	0
+	+	1	175
+	+	2	97
+	+	3	70
+	+	4	146
+	+	5	139
+	+	6	116
+	+	7	93
+	+	9	139
+	+	10	54
+	+	12	144
+	+	13	129
+	+	15	61
+	+	17	86
+	+	19	138
+	+	20	198
+	+	21	113
+	+	23	59
+	+	24	53
+	+	25	130
+	+	26	59
+	+	28	81
+	+	30	196
+	+	31	122
+	+	33	122
+	+	35	83
+	+	36	181
+	+	37	205
+	+	38	145
+	+	40	37
+	+	41	87
+
+> ~/dataset/all.en
+	"	111397	0
+
+> ~/dataset/all.ja
+	"	111397	0
+
+> ~/dataset/all_ja
+	"	1	0
+
+> ~/dataset/all_ja.txt
+	"	14	0
+
+> ~/expriment/util/generators.py
+	"	24	19
+
+> ~/dataset/all_en.txt
+	"	111399	0
+
+> ~/dataset/all_
+	"	1	0
+
+> ~/dataset/train.en
+	"	1	0
+
+> ~/encdec/ne
+	"	1	0
+
+> ~/encdec/en
+	"	1	0
+
+> ~/encdec/test.csv
+	"	101	0
+
+> ~/encdec/test.cc
+	"	1	0
+
+> ~/encdec/200.csv
+	"	1	0
