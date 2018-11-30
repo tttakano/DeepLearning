@@ -17,8 +17,8 @@
 $
 
 # コマンドライン 項目の履歴 (新しいものから古いものへ):
-:q
 :wq
+:q
 :q!
 :%s/\n\n/\r** /g
 :%s/\n\n/\r **/g
@@ -86,18 +86,19 @@ $
 	*
 
 # ファイルマーク:
-'0  1  0  ~/.gitignore
-'1  7  29  ~/.gitignore
-'2  4  24  ~/.gitignore
-'3  6  25  ~/.gitignore
-'4  5  23  ~/.gitignore
-'5  8  0  ~/DeepLeaning/dataset
-'6  8  1  ~/DeepLeaning/attention
-'7  18  0  ~/chiner_seq2seqex/seq2seqex.py
-'8  1  0  ~/chiner_seq2seq/dataset/vocab.en
-'9  53  0  ~/chiner_seq2seqex/dataset/train.en
+'0  8  1  ~/.gitignore
+'1  1  0  ~/.gitignore
+'2  7  29  ~/.gitignore
+'3  4  24  ~/.gitignore
+'4  6  25  ~/.gitignore
+'5  5  23  ~/.gitignore
+'6  8  0  ~/DeepLeaning/dataset
+'7  8  1  ~/DeepLeaning/attention
+'8  18  0  ~/chiner_seq2seqex/seq2seqex.py
+'9  1  0  ~/chiner_seq2seq/dataset/vocab.en
 
 # ジャンプリスト (新しいものが先):
+-'  8  1  ~/.gitignore
 -'  1  0  ~/.gitignore
 -'  7  29  ~/.gitignore
 -'  4  24  ~/.gitignore
@@ -199,15 +200,16 @@ $
 # ファイル内マークの履歴 (新しいものから古いもの):
 
 > ~/.gitignore
-	"	1	0
-	^	7	30
-	.	7	23
+	"	8	1
+	^	8	2
+	.	8	1
 	+	1	25
 	+	5	24
 	+	6	0
 	+	3	23
 	+	4	24
-	+	7	23
+	+	7	30
+	+	8	1
 
 > ~/DeepLeaning/dataset/_train1000.en
 	"	1	0
