@@ -57,15 +57,15 @@ class Seq2seq(chainer.Chain):
             self.encoder = L.NStepLSTM(n_layers, n_units, n_units, 0.1)
             self.decoder = L.NStepLSTM(n_layers, n_units, n_units, 0.1)
             # add
-            self.connecter = L.Linear(None, n_units)
+            self.connecter = L.Linear(None, unit*batchsize)######################################
             # end
             self.W = L.Linear(n_units, n_target_vocab)
 
         self.n_layers = n_layers
         self.n_units = n_units
         # add
-        self.prev_hx = None
-        self.prev_h = None
+        self.prev_hx = chainer.Variable(numpy.array(numpy.zeros((self.n_layers, 1, self.n_units)), dtype=numpy.float32))
+        self.prev_h = chainer.Variable(numpy.array(numpy.zeros((self.n_layers, 1, self.n_units)), dtype=numpy.float32))
         # end
 
     def __call__(self, xs, ys):
@@ -81,16 +81,43 @@ class Seq2seq(chainer.Chain):
         batch = len(xs)
 
         hx, cx, _ = self.encoder(None, None, exs)
-        # add ############################################################################################################
-        self.prev_hx = hx
+        #add##################################################################################################################################
+        print("hx.shpae = {}".format(hx.shape))
+        forward_hx = hx[:, :-1]
+        sifted_hx = F.concat((self.prev_hx, forward_hx), axis=1)
+        in_hx = F.concat((hx, sifted_hx), axis=2)
+        out_hx = self.connecter(in_hx)
+        out_hx = out_hx.reshape(self.n_layers, -1, self.n_units)
+        print("out_hx = {}".format(out_hx.shape))
+        self.prev_hx = hx[:, -1:]
 
-        if xs[0][-1] != 6 and self.prev_hx is not None:
-            #print("connect!")
-            hx = chainer.functions.concat([hx, self.prev_hx], axis=1).data
-            hx = self.connecter(hx)
-            hx = F.reshape(hx, (self.n_layers, batch, self.n_units))  # (3, 1, 500)
+        '''
+        hx[0] = [[0,1,2],[3,4,5],[6,7,8]]                  shape = (layers, batch, units)
+        forward_hx[0] = [[0,1,2],[3,4,5]]                  shape = (layers, batch-1, units)
+        sifted_hx[0] = [self.prev_hx, [0,1,2],[3,4,5]]     shape = (layers, batch, units)
+        in_hx[0] = [hx[0],sifted_hx[0]]                    shape = (layers, batch, units*2)
+        out_hx[0] = connecter(in_hx)                       shape = (layers, batch, units)
+        '''
 
-        # end############################################################################################################
+        is_start_of_sentence = numpy.asarray([1 if word[-1] == 6 else 0 for word in xs]) #6 means word number of * (start of sentece)
+        is_start_of_sentence = is_start_of_sentence.reshape(-1, 1)
+        
+        new_hx = is_start_of_sentence * hx + (1 - is_start_of_sentence) * out_hx
+
+        '''
+        When
+        hx = [[[1,2,3],[4,5,6],[7,8,9]],[[11,12,13],[14,15,16],[17,18,19]],[21,22,23],[24,25,26],[27,28,29]] (shape = (layer=3, batch=3, unit=3))
+        out_hx = [[[10,20,30],[40,50,60],[70,80,90]],[[110,120,130],[140,150,160],[170,180,190]],[210,220,230],[240,250,260],[270,280,290]]
+        is_state_of_stence = [[1],[0],[1]] (shape=(batch=3, 1))
+        
+        Then, 
+        new_hx = [[[1,2,3],[4,5,6],[7,8,9]],[[110,120,130],[140,150,160],[170,180,190]],[21,22,23],[24,25,26],[27,28,29]]
+        '''
+
+        hx = new_hx
+        
+        sys.exit()
+        #end############################################################################################################################
         _, _, os = self.decoder(hx, cx, eys)
 
         # It is faster to concatenate data before calculating loss
@@ -116,11 +143,18 @@ class Seq2seq(chainer.Chain):
             h, c, _ = self.encoder(None, None, exs)
 
             # add
-            self.prev_h = h
-            if xs[0][-1] != 6 and self.prev_h is not None:
-                h = chainer.functions.concat([h, self.prev_h], axis=1).data
-                h = self.connecter(h)
-                h = F.reshape(h, (self.n_layers, batch, self.n_units))  # (3, 1, 500)
+            forward_h = h[:, :-1]
+            sifted_h = F.concat((self.prev_h, forward_h), axis=1)
+            in_h = F.concat((h, sifted_h), axis=2)
+            out_h = self.connecter(in_h)
+            out_h = out_h.reshape(self.n_layers, -1, self.n_units)
+            self.prev_h = h[:, -1:]
+
+            is_start_of_sentence = numpy.asarray([1 if word[-1] == 6 else 0 for word in xs]) 
+            is_start_of_sentence = is_start_of_sentence.reshape(-1, 1)
+
+            new_h = is_start_of_sentence * h + (1 - is_start_of_sentence) * out_h
+            h = new_h
             # end
             
             ys = self.xp.full(batch, EOS, numpy.int32)
@@ -253,7 +287,7 @@ def main():
                         help='GPU ID (negative value indicates CPU)')
     parser.add_argument('--resume', '-r', default='',
                         help='resume the training from snapshot')
-    parser.add_argument('--unit', '-u', type=int, default=500,
+    parser.add_argument('--unit', '-u', type=int, default=100,
                         help='number of units')
     parser.add_argument('--layer', '-l', type=int, default=3,
                         help='number of layers')
@@ -267,7 +301,7 @@ def main():
                         help='maximum length of target sentence')
     parser.add_argument('--log-interval', type=int, default=100,
                         help='number of iteration to show log')
-    parser.add_argument('--validation-interval', type=int, default=256000,
+    parser.add_argument('--validation-interval', type=int, default=4000,
                         help='number of iteration to evlauate the model '
                              'with validation dataset')
     parser.add_argument('--out', '-o', default='result',

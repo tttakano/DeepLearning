@@ -17,8 +17,8 @@
 $
 
 # コマンドライン 項目の履歴 (新しいものから古いものへ):
-:wq
 :q
+:wq
 :q!
 :%s/\n\n/\r** /g
 :%s/\n\n/\r **/g
@@ -53,9 +53,60 @@ $
 # 入力行 項目の履歴 (新しいものから古いものへ):
 
 # レジスタ:
-""0	CHAR	0
+"0	CHAR	0
 	*
-"1	LINE	0
+"2	LINE	0
+	#!/usr/bin/env python
+	
+	import argparse
+	
+	from nltk.translate import bleu_score
+	import numpy
+	import progressbar
+	import six
+	
+	import chainer
+	from chainer import cuda
+	import chainer.functions as F
+	import chainer.links as L
+	from chainer import training
+	from chainer.training import extensions
+	import matplotlib as mpl
+	
+	#chainer.set_debug(True)
+	
+	mpl.use('Agg')
+	
+	UNK = 0
+	EOS = 1
+	
+	'''
+	ex)
+	xs=[[i, am, taro],[i, was, born, in, japan],[i, love, music],[how,are,you]]
+	ex=[i, am, taro,i, was, born, in, japan,i, love, music,how,are,you]
+	exs=[[i, am, taro],[i, was, born, in, japan],[i, love, music],[how,are,you]](embed by neural network)
+	'''
+	
+	
+	def sequence_embed(embed, xs):
+	    x_len = [len(x) for x in xs]
+	    x_section = numpy.cumsum(x_len[:-1])
+	    ex = embed(F.concat(xs, axis=0))
+	    exs = F.split_axis(ex, x_section, 0)
+	    return exs
+	
+	
+	"""            
+	            hx, cx, _ = self.encoder(None, None, exs)
+	            _, _, os = self.decoder(hx, cx, eys)
+	            concat_os = F.concat(os, axis=0)
+	            concat_ys_out = F.concat(ys_out, axis=0)            
+	            return F.sum(F.softmax_cross_entropy(self.W(concat_os), concat_ys_out, reduce='no')) / batch
+	"""
+	
+	
+	class Seq2seq(chainer.Chain):
+"3	LINE	0
 	messhu
 	
 	the artist ' s life
@@ -76,9 +127,9 @@ $
 	he was given the posthumous name " toyo " or " sesshu ( 拙宗 ) . "
 	born in bicchu province , he moved to suo province after entering sshokoku-ji temple in kyoto .
 	later he accompanied a mission to ming dynasty china and learned chinese ink painting .
-"2	LINE	0
+"4	LINE	0
 	      logs.append(log)#log
-"3	LINE	0
+"5	LINE	0
 	      log={"epoch":epoch, "loss":loss} #log
 "g	CHAR	0
 	
@@ -86,20 +137,27 @@ $
 	*
 
 # ファイルマーク:
-'0  10  8  ~/.gitignore
-'1  18  1  ~/.gitignore
-'2  1  0  ~/.gitignore
-'3  17  29  ~/.gitignore
-'4  14  24  ~/.gitignore
-'5  16  25  ~/.gitignore
-'6  15  23  ~/.gitignore
-'7  8  0  ~/DeepLeaning/dataset
-'8  8  1  ~/DeepLeaning/attention
-'9  18  0  ~/chiner_seq2seqex/seq2seqex.py
+'0  10  0  ~/chiner_seq2seqex/dataset/train.en
+'1  1  0  ~/chiner_seq2seqex/seq2seqex.py
+'2  8  0  ~/chiner_seq2seqex
+'3  115  0  ~/chiner_seq2seqex/doubleLSTM.py
+'4  16  86  ~/chiner_seq2seqex/dataset/train.en
+'5  1  0  ~/.gitignore
+'6  10  8  ~/.gitignore
+'7  18  1  ~/.gitignore
+'8  17  29  ~/.gitignore
+'9  14  24  ~/.gitignore
 
 # ジャンプリスト (新しいものが先):
--'  10  8  ~/.gitignore
+-'  10  0  ~/chiner_seq2seqex/dataset/train.en
+-'  1  0  ~/chiner_seq2seqex/dataset/train.en
+-'  1  0  ~/chiner_seq2seqex/seq2seqex.py
+-'  8  0  ~/chiner_seq2seqex
+-'  115  0  ~/chiner_seq2seqex/doubleLSTM.py
+-'  1  0  ~/chiner_seq2seqex/doubleLSTM.py
+-'  16  86  ~/chiner_seq2seqex/dataset/train.en
 -'  1  0  ~/.gitignore
+-'  10  8  ~/.gitignore
 -'  18  1  ~/.gitignore
 -'  17  29  ~/.gitignore
 -'  14  24  ~/.gitignore
@@ -109,11 +167,8 @@ $
 -'  1  0  ~/DeepLeaning/dataset/_train1000.en
 -'  1  0  ~/DeepLeaning/dataset
 -'  8  1  ~/DeepLeaning/attention
--'  18  0  ~/chiner_seq2seqex/seq2seqex.py
--'  1  0  ~/chiner_seq2seqex/seq2seqex.py
 -'  1  0  ~/chiner_seq2seq/dataset/vocab.en
 -'  53  0  ~/chiner_seq2seqex/dataset/train.en
--'  1  0  ~/chiner_seq2seqex/dataset/train.en
 -'  53  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
 -'  1  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
 -'  13  0  ~/chiner_seq2seq/dataset/pncKyotoAll.en
@@ -133,9 +188,6 @@ $
 -'  1  0  ~/chiner_seq2seqex/dataset/train..
 -'  1144  0  ~/chiner_seq2seqex/mylog.txt
 -'  4013  0  ~/chiner_seq2seqex/mylog.txt
--'  243  43  ~/chiner_seq2seqex/seq2seqex.py
--'  58  0  ~/chiner_seq2seqex/seq2seqex.py
--'  103  0  ~/chiner_seq2seqex/seq2seqex.py
 -'  1  0  ~/chiner_seq2seqex/seq2seqex
 -'  1  0  ~/chiner_seq2seqex/dataset/vocab.en
 -'  40000  0  ~/chiner_seq2seqex/dataset/vocab.jp
@@ -189,18 +241,31 @@ $
 -'  709062  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.jp
 -'  1  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.jp
 -'  709062  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.en
--'  1  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.en
--'  293204  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  653853  0  ~/chiner_seq2seqex/dataset/interjp
--'  653914  0  ~/chiner_seq2seqex/dataset/interen
--'  11  0  ~/chiner_seq2seqex/dataset/interen
--'  300246  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
--'  206607  68  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
+-'  1  0  ~/chiner_seq2seqex/seq2seqex.py
+-'  8  0  ~/chiner_seq2seqex
+-'  115  0  ~/chiner_seq2seqex/doubleLSTM.py
+-'  1  0  ~/chiner_seq2seqex/doubleLSTM.py
 
 # ファイル内マークの履歴 (新しいものから古いもの):
 
+> ~/chiner_seq2seqex/dataset/train.en
+	"	10	0
+	^	16	108
+	.	16	0
+	+	6	37
+	+	16	0
+
+> ~/chiner_seq2seqex/seq2seqex.py
+	"	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+
+> ~/chiner_seq2seqex/doubleLSTM.py
+	"	115	0
+
 > ~/.gitignore
-	"	10	8
+	"	1	0
 	^	10	9
 	.	10	8
 	+	1	25
@@ -217,20 +282,8 @@ $
 > ~/DeepLeaning/dataset/_train1000.en
 	"	1	0
 
-> ~/chiner_seq2seqex/seq2seqex.py
-	"	18	0
-	^	18	1
-	.	18	0
-	+	18	0
-
 > ~/chiner_seq2seq/dataset/vocab.en
 	"	1	0
-
-> ~/chiner_seq2seqex/dataset/train.en
-	"	53	0
-	^	6	37
-	.	6	37
-	+	6	37
 
 > ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
 	"	53	0
@@ -764,7 +817,4 @@ $
 	"	101	0
 
 > ~/encdec/test.cc
-	"	1	0
-
-> ~/encdec/200.csv
 	"	1	0

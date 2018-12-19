@@ -1,118 +1,3 @@
-tmux
-tmux ls
-tmux a -t 1
-tmux ls
-tmux 
-tmux ls
-ls
-s
-cd ../
-ls
-cd expriment/
-ls
-vi experiment.py 
-ls
-cp experiment.py test_ex.py
-vi experiment.py 
-vi test_ex.py 
-python experiment.py 6000-500-500/6000-500-500.100
-python test_ex.py 6000-500-500/6000-500-500.100
-vi generate.txt 
-vi test_ex.py 
-python test_ex.py 6000-500-500/6000-500-500.100
-vi generate.txt 
-ls
-cd ../
-ls
-cd expriment/
-ls
-python experiment.py 6000-700-700
-tmux ls
-tmux 
-tmux a -t
-tmux ls
-tmux a -t 3
-tmux ls
-tmux a -t 5
-ls
-python encdec.py 6000-500-500
-ls
-rm 6000-500-500.0*
-vi encdec.py 
-python encdec.py 6000-700-700
-ls
-tmux ls
-tmux a -t 3
-tmux a -t 5
-ls
-cd encdec/
-ls
-vi test_enc.py 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-vi test_enc.py 
-cd ../dataset/
-ls
-vi ttrain_
-cd ../encdec/
-ls
-vi test_enc.py 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-python test_enc.py 6000-700-700.100
-vi generate.txt 
-vi encdec.py 
-pythonn encdec.py 6000-500-500
-vi encdec.py 
-tmux
-ls
-mkdir 6000-700-700
-mv 6000-700-700.* 6000-700-700
-ls
-mv generate.txt 6000-700-700/
-vi 6000-700-700/
-cd 6000-700-700/
-ls
-tmux ls
-cd ../
-ls
-tmux ls
-tmux a -t 7
-ls
-cd encdec/
-ls
-exit
-ls
-mkdir attention
-ls
-mv mt_s2s_attention.py util attention/
-ls
-cd attention/
-ls
-cd ../
-ls
 cd encdec/
 ls
 mkdir 6000-300-300
@@ -1998,3 +1883,118 @@ git add .
 git commit -m "initial commit"
 git remote add origin https://github.com/tttakano/DeepLearning.git
 git push -u origin master
+ls
+cd chiner_seq2seq
+ls
+cd ../
+vi .gitignore 
+git add /
+git add .
+git commit -m "initial commit"
+git remote add origin https://github.com/tttakano/DeepLearning.git
+git push -u origin master
+ls
+vi .gitignore 
+ls
+cd chiner_seq2seq
+ls
+mv NVIDIA-Linux-x86_64-410.66.run dataset/
+ls
+cd ../
+l
+git add .
+git push -m "initial"
+git commit -m "initial"
+git push -u origin master
+ls
+cd chiner_seq2seq
+ls
+git add .
+git commit -m "remove nvidia"
+git commit -m "Initial Commit"
+ls
+ls -la
+cd ../
+ls
+ls -la
+rm -rf .git
+git initt
+git init
+git add .
+git commit -m "Initial Commit"
+git remote add origin https://github.com/tttakano/DeepLearning.git
+git push -u origin master
+ls
+cd DeepLeaning/
+ls
+cd ../
+ls
+rm -rf DeepLeaning/
+ls
+vi .gitignore 
+git add .
+git commit -m "adjustment"
+git push
+git status
+vi .gitignore 
+git add .
+git commit -m "adjustment"
+git push
+ls -la
+vi .gitignore 
+git commit -m "Adjustment"
+git add .
+git commit -m "Adjustment"
+git push
+vi .gitignore 
+git add /
+git add .
+git commit -m "ignore dotfile"
+git push
+vi .gitignore 
+ls
+cd chiner_seq2seq
+ls
+cd ../chiner_seq2seqex/
+ls
+cp seq2seqex.py parallelseq.py
+nvidia-smi
+top | grep ttakano
+free -h
+top | grep ttakano
+ls
+cd chiner_seq2seqex/
+ls
+cd dataset/
+ls
+ls -lh train.en 
+ls
+cd ../
+ls
+vi doubleLSTM.py 
+ls
+cd chiner_seq2seqex/
+ls
+cd result/
+ls
+tmux ls
+sudo su
+ls
+cd
+python
+ps -aux
+sudo su
+ps -aux
+ls
+vi chiner_seq2seqex/
+mv chiner_seq2seqex/
+ls
+cd chiner_seq2seqex/
+ls
+vi seq2seqex.py 
+sodo su
+sudo su
+ps -aux
+sudo su
+ps -aux | jupyter
+ps -aux | grep jupyter
