@@ -6,7 +6,7 @@ from nltk.translate import bleu_score
 import numpy
 import progressbar
 import six
-
+import sys
 import chainer
 from chainer import cuda
 import chainer.functions as F
@@ -49,7 +49,7 @@ def sequence_embed(embed, xs):
 
 class Seq2seq(chainer.Chain):
 
-    def __init__(self, n_layers, n_source_vocab, n_target_vocab, n_units):
+    def __init__(self, n_layers, n_source_vocab, n_target_vocab, n_units, batch_size):
         super(Seq2seq, self).__init__()
         with self.init_scope():
             self.embed_x = L.EmbedID(n_source_vocab, n_units)
@@ -57,15 +57,16 @@ class Seq2seq(chainer.Chain):
             self.encoder = L.NStepLSTM(n_layers, n_units, n_units, 0.1)
             self.decoder = L.NStepLSTM(n_layers, n_units, n_units, 0.1)
             # add
-            self.connecter = L.Linear(None, unit*batchsize)######################################
+            self.connecter = L.Linear(None, n_units*batch_size)######################################
             # end
             self.W = L.Linear(n_units, n_target_vocab)
+            
 
         self.n_layers = n_layers
         self.n_units = n_units
         # add
-        self.prev_hx = chainer.Variable(numpy.array(numpy.zeros((self.n_layers, 1, self.n_units)), dtype=numpy.float32))
-        self.prev_h = chainer.Variable(numpy.array(numpy.zeros((self.n_layers, 1, self.n_units)), dtype=numpy.float32))
+        self.prev_hx = chainer.Variable(cuda.cupy.array(numpy.zeros((self.n_layers, 1, self.n_units)), dtype=numpy.float32))
+        self.prev_h = chainer.Variable(cuda.cupy.array(numpy.zeros((self.n_layers, 1, self.n_units)), dtype=numpy.float32))
         # end
 
     def __call__(self, xs, ys):
@@ -82,13 +83,11 @@ class Seq2seq(chainer.Chain):
 
         hx, cx, _ = self.encoder(None, None, exs)
         #add##################################################################################################################################
-        print("hx.shpae = {}".format(hx.shape))
         forward_hx = hx[:, :-1]
-        sifted_hx = F.concat((self.prev_hx, forward_hx), axis=1)
+        sifted_hx = F.concat([self.prev_hx, forward_hx], axis=1)
         in_hx = F.concat((hx, sifted_hx), axis=2)
         out_hx = self.connecter(in_hx)
         out_hx = out_hx.reshape(self.n_layers, -1, self.n_units)
-        print("out_hx = {}".format(out_hx.shape))
         self.prev_hx = hx[:, -1:]
 
         '''
@@ -99,7 +98,7 @@ class Seq2seq(chainer.Chain):
         out_hx[0] = connecter(in_hx)                       shape = (layers, batch, units)
         '''
 
-        is_start_of_sentence = numpy.asarray([1 if word[-1] == 6 else 0 for word in xs]) #6 means word number of * (start of sentece)
+        is_start_of_sentence = cuda.cupy.array([1 if word[-1] == 6 else 0 for word in xs]) #6 means word number of * (start of sentece)
         is_start_of_sentence = is_start_of_sentence.reshape(-1, 1)
         
         new_hx = is_start_of_sentence * hx + (1 - is_start_of_sentence) * out_hx
@@ -116,7 +115,7 @@ class Seq2seq(chainer.Chain):
 
         hx = new_hx
         
-        sys.exit()
+        #sys.exit()
         #end############################################################################################################################
         _, _, os = self.decoder(hx, cx, eys)
 
@@ -150,7 +149,7 @@ class Seq2seq(chainer.Chain):
             out_h = out_h.reshape(self.n_layers, -1, self.n_units)
             self.prev_h = h[:, -1:]
 
-            is_start_of_sentence = numpy.asarray([1 if word[-1] == 6 else 0 for word in xs]) 
+            is_start_of_sentence = cuda.cupy.array([1 if word[-1] == 6 else 0 for word in xs]) 
             is_start_of_sentence = is_start_of_sentence.reshape(-1, 1)
 
             new_h = is_start_of_sentence * h + (1 - is_start_of_sentence) * out_h
@@ -279,7 +278,7 @@ def main():
                         help='source sentence list for validation')
     parser.add_argument('--validation-target', default="./dataset/test.jp",
                         help='target sentence list for validation')
-    parser.add_argument('--batchsize', '-b', type=int, default=1,
+    parser.add_argument('--batchsize', '-b', type=int, default=128,
                         help='number of sentence pairs in each mini-batch')
     parser.add_argument('--epoch', '-e', type=int, default=100,
                         help='number of sweeps over the dataset to train')
@@ -287,7 +286,7 @@ def main():
                         help='GPU ID (negative value indicates CPU)')
     parser.add_argument('--resume', '-r', default='',
                         help='resume the training from snapshot')
-    parser.add_argument('--unit', '-u', type=int, default=100,
+    parser.add_argument('--unit', '-u', type=int, default=300,
                         help='number of units')
     parser.add_argument('--layer', '-l', type=int, default=3,
                         help='number of layers')
@@ -333,7 +332,7 @@ def main():
     target_words = {i: w for w, i in target_ids.items()}
     source_words = {i: w for w, i in source_ids.items()}
 
-    model = Seq2seq(args.layer, len(source_ids), len(target_ids), args.unit)
+    model = Seq2seq(args.layer, len(source_ids), len(target_ids), args.unit, args.batchsize)
     if args.gpu >= 0:
         chainer.cuda.get_device(args.gpu).use()
         model.to_gpu(args.gpu)
