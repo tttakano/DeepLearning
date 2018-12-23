@@ -8,6 +8,7 @@
 /chiner_seq2seqex
 /dataset
 /word2vec
+/vacab.*
 
 result/
 chiner_seq2seq/dataset/

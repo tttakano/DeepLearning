@@ -1,48 +1,3 @@
-cd encdec/
-ls
-mkdir 6000-300-300
-mv 6000-300-300.* 6000-300-300
-ls
-cd ../
-ls
-cd attention/
-ls
-vi attention.py 
-python attention.py 6000-500-500
-tmux ls
-tmux a -t 5
-tmux a -t 7
-ls
-rm ip.ipynb 
-df
-df -h
-du
-du -sh ?*
-du -sh /*
-du -sh
-ls
-exit
-ls
-tmux ls
-tmux a -t 7
-tmux a -t 5
-ls
-exit
-ls
-tmux ls
-nvidia-smu
-nvidia-smi
-nvidia-smi --query-gpu
-nvidia-smi -h
-nvidia-smi -q
-ps alx
-nvidia-smi -q
-nvidia-smi --help--query-gpu
-nvidia-smi --h
-nvidia-smi -h
-nvidia-smi -query-gpu=index
-pip install progressbar
-python setup.py egg_info
 python setup.py egg_infopython
 python
 ls
@@ -1998,3 +1953,48 @@ ps -aux
 sudo su
 ps -aux | jupyter
 ps -aux | grep jupyter
+ls
+cd chiner_seq2seqex/
+ls
+cd result/
+ls
+rm snapshot_epoch-*
+ls
+cd ../
+ls
+cd dataset/
+ls
+i train.en 
+vi train.en 
+ls
+cd ../
+ls
+cd ../
+ls
+git add .
+git commit -m "change ex"
+git push
+ps -aux 
+nvidia-smi
+ls
+cd chiner_seq2seq
+xdc
+cd ./
+cd ../
+cd chiner_seq2seqex/
+ls
+python seq2seqex.py 
+top
+top 1
+top
+ls
+python seq2seqex.py 
+vi chainerex.ipynb 
+vi seq2seqex.py 
+python seq2seqex.py 
+vi seq2seqex.py 
+python seq2seqex.py 
+git add .
+git commit -m "fixed ex"
+git push
+top 

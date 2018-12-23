@@ -17,8 +17,8 @@
 $
 
 # コマンドライン 項目の履歴 (新しいものから古いものへ):
-:q
 :wq
+:q
 :q!
 :%s/\n\n/\r** /g
 :%s/\n\n/\r **/g
@@ -137,32 +137,36 @@ $
 	*
 
 # ファイルマーク:
-'0  10  0  ~/chiner_seq2seqex/dataset/train.en
-'1  1  0  ~/chiner_seq2seqex/seq2seqex.py
-'2  8  0  ~/chiner_seq2seqex
-'3  115  0  ~/chiner_seq2seqex/doubleLSTM.py
-'4  16  86  ~/chiner_seq2seqex/dataset/train.en
-'5  1  0  ~/.gitignore
-'6  10  8  ~/.gitignore
-'7  18  1  ~/.gitignore
-'8  17  29  ~/.gitignore
-'9  14  24  ~/.gitignore
+'0  11  7  ~/.gitignore
+'1  1  0  ~/.gitignore
+'2  10  8  ~/.gitignore
+'3  1  0  ~/chiner_seq2seqex/seq2seqex.py
+'4  87  0  ~/chiner_seq2seqex/seq2seqex.py
+'5  70  0  ~/chiner_seq2seqex/chainerex.ipynb
+'6  10  0  ~/chiner_seq2seqex/dataset/train.en
+'7  8  0  ~/chiner_seq2seqex
+'8  115  0  ~/chiner_seq2seqex/doubleLSTM.py
+'9  16  86  ~/chiner_seq2seqex/dataset/train.en
 
 # ジャンプリスト (新しいものが先):
+-'  11  7  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  10  8  ~/.gitignore
+-'  1  0  ~/chiner_seq2seqex/seq2seqex.py
+-'  87  0  ~/chiner_seq2seqex/seq2seqex.py
+-'  70  0  ~/chiner_seq2seqex/chainerex.ipynb
+-'  1  0  ~/chiner_seq2seqex/chainerex.ipynb
 -'  10  0  ~/chiner_seq2seqex/dataset/train.en
 -'  1  0  ~/chiner_seq2seqex/dataset/train.en
--'  1  0  ~/chiner_seq2seqex/seq2seqex.py
 -'  8  0  ~/chiner_seq2seqex
 -'  115  0  ~/chiner_seq2seqex/doubleLSTM.py
 -'  1  0  ~/chiner_seq2seqex/doubleLSTM.py
 -'  16  86  ~/chiner_seq2seqex/dataset/train.en
--'  1  0  ~/.gitignore
--'  10  8  ~/.gitignore
--'  18  1  ~/.gitignore
--'  17  29  ~/.gitignore
--'  14  24  ~/.gitignore
--'  16  25  ~/.gitignore
--'  15  23  ~/.gitignore
+-'  19  1  ~/.gitignore
+-'  18  29  ~/.gitignore
+-'  15  24  ~/.gitignore
+-'  17  25  ~/.gitignore
+-'  16  23  ~/.gitignore
 -'  8  0  ~/DeepLeaning/dataset
 -'  1  0  ~/DeepLeaning/dataset/_train1000.en
 -'  1  0  ~/DeepLeaning/dataset
@@ -241,12 +245,35 @@ $
 -'  709062  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.jp
 -'  1  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.jp
 -'  709062  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.en
--'  1  0  ~/chiner_seq2seqex/seq2seqex.py
 -'  8  0  ~/chiner_seq2seqex
 -'  115  0  ~/chiner_seq2seqex/doubleLSTM.py
--'  1  0  ~/chiner_seq2seqex/doubleLSTM.py
 
 # ファイル内マークの履歴 (新しいものから古いもの):
+
+> ~/.gitignore
+	"	11	7
+	^	11	8
+	.	11	7
+	+	1	25
+	+	16	24
+	+	17	0
+	+	14	23
+	+	15	24
+	+	18	30
+	+	19	2
+	+	20	0
+	+	4	19
+	+	10	9
+	+	11	7
+
+> ~/chiner_seq2seqex/seq2seqex.py
+	"	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+
+> ~/chiner_seq2seqex/chainerex.ipynb
+	"	70	0
 
 > ~/chiner_seq2seqex/dataset/train.en
 	"	10	0
@@ -255,29 +282,8 @@ $
 	+	6	37
 	+	16	0
 
-> ~/chiner_seq2seqex/seq2seqex.py
-	"	1	0
-	.	1	0
-	+	1	0
-	+	1	0
-
 > ~/chiner_seq2seqex/doubleLSTM.py
 	"	115	0
-
-> ~/.gitignore
-	"	1	0
-	^	10	9
-	.	10	8
-	+	1	25
-	+	15	24
-	+	16	0
-	+	13	23
-	+	14	24
-	+	17	30
-	+	18	2
-	+	19	0
-	+	4	19
-	+	10	8
 
 > ~/DeepLeaning/dataset/_train1000.en
 	"	1	0
@@ -815,6 +821,3 @@ $
 
 > ~/encdec/test.csv
 	"	101	0
-
-> ~/encdec/test.cc
-	"	1	0
