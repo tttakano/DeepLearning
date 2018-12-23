@@ -1,0 +1,71 @@
+[I 2018-12-13 19:57:35.242 JupyterHub app:886] Writing cookie_secret to /home/ttakano/jupyterhub_cookie_secret
+[I 2018-12-13 19:57:35.261 alembic.runtime.migration migration:117] Context impl SQLiteImpl.
+[I 2018-12-13 19:57:35.261 alembic.runtime.migration migration:122] Will assume non-transactional DDL.
+[I 2018-12-13 19:57:35.360 alembic.runtime.migration migration:327] Running stamp_revision  -> 3ec6993fe20c
+[W 2018-12-13 19:57:36.815 JupyterHub app:966] No admin users, admin interface will be unavailable.
+[W 2018-12-13 19:57:36.815 JupyterHub app:967] Add any administrative users to `c.Authenticator.admin_users` in config.
+[I 2018-12-13 19:57:36.816 JupyterHub app:994] Not using whitelist. Any authenticated user will be allowed.
+[E 2018-12-13 19:57:36.870 JupyterHub app:1536] Failed to bind hub to http://127.0.0.1:8081/hub/
+[E 2018-12-13 19:57:36.871 JupyterHub app:1634]
+    Traceback (most recent call last):
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/jupyterhub/app.py", line 1632, in launch_instance_async
+        yield self.start()
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/jupyterhub/app.py", line 1534, in start
+        self.http_server.listen(self.hub_port, address=self.hub_ip)
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/tornado/tcpserver.py", line 142, in listen
+        sockets = bind_sockets(port, address=address)
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/tornado/netutil.py", line 197, in bind_sockets
+        sock.bind(sockaddr)
+    OSError: [Errno 98] Address already in use
+    
+[I 2018-12-15 19:28:52.819 JupyterHub app:849] Loading cookie_secret from /home/ttakano/jupyterhub_cookie_secret
+[W 2018-12-15 19:28:52.838 JupyterHub app:966] No admin users, admin interface will be unavailable.
+[W 2018-12-15 19:28:52.838 JupyterHub app:967] Add any administrative users to `c.Authenticator.admin_users` in config.
+[I 2018-12-15 19:28:52.839 JupyterHub app:994] Not using whitelist. Any authenticated user will be allowed.
+[E 2018-12-15 19:28:52.866 JupyterHub app:1536] Failed to bind hub to http://127.0.0.1:8081/hub/
+[E 2018-12-15 19:28:52.867 JupyterHub app:1634]
+    Traceback (most recent call last):
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/jupyterhub/app.py", line 1632, in launch_instance_async
+        yield self.start()
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/jupyterhub/app.py", line 1534, in start
+        self.http_server.listen(self.hub_port, address=self.hub_ip)
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/tornado/tcpserver.py", line 142, in listen
+        sockets = bind_sockets(port, address=address)
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/tornado/netutil.py", line 197, in bind_sockets
+        sock.bind(sockaddr)
+    OSError: [Errno 98] Address already in use
+    
+[I 2018-12-15 19:29:48.291 JupyterHub app:849] Loading cookie_secret from /home/ttakano/jupyterhub_cookie_secret
+[W 2018-12-15 19:29:48.311 JupyterHub app:966] No admin users, admin interface will be unavailable.
+[W 2018-12-15 19:29:48.311 JupyterHub app:967] Add any administrative users to `c.Authenticator.admin_users` in config.
+[I 2018-12-15 19:29:48.311 JupyterHub app:994] Not using whitelist. Any authenticated user will be allowed.
+[E 2018-12-15 19:29:48.339 JupyterHub app:1536] Failed to bind hub to http://127.0.0.1:8081/hub/
+[E 2018-12-15 19:29:48.340 JupyterHub app:1634]
+    Traceback (most recent call last):
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/jupyterhub/app.py", line 1632, in launch_instance_async
+        yield self.start()
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/jupyterhub/app.py", line 1534, in start
+        self.http_server.listen(self.hub_port, address=self.hub_ip)
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/tornado/tcpserver.py", line 142, in listen
+        sockets = bind_sockets(port, address=address)
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/tornado/netutil.py", line 197, in bind_sockets
+        sock.bind(sockaddr)
+    OSError: [Errno 98] Address already in use
+    
+[I 2018-12-15 19:29:55.613 JupyterHub app:849] Loading cookie_secret from /home/ttakano/jupyterhub_cookie_secret
+[W 2018-12-15 19:29:55.633 JupyterHub app:966] No admin users, admin interface will be unavailable.
+[W 2018-12-15 19:29:55.634 JupyterHub app:967] Add any administrative users to `c.Authenticator.admin_users` in config.
+[I 2018-12-15 19:29:55.634 JupyterHub app:994] Not using whitelist. Any authenticated user will be allowed.
+[E 2018-12-15 19:29:55.663 JupyterHub app:1536] Failed to bind hub to http://127.0.0.1:8081/hub/
+[E 2018-12-15 19:29:55.663 JupyterHub app:1634]
+    Traceback (most recent call last):
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/jupyterhub/app.py", line 1632, in launch_instance_async
+        yield self.start()
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/jupyterhub/app.py", line 1534, in start
+        self.http_server.listen(self.hub_port, address=self.hub_ip)
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/tornado/tcpserver.py", line 142, in listen
+        sockets = bind_sockets(port, address=address)
+      File "/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/tornado/netutil.py", line 197, in bind_sockets
+        sock.bind(sockaddr)
+    OSError: [Errno 98] Address already in use
+    

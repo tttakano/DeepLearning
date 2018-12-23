@@ -1,15 +1,3 @@
-/*
-/.*
-
-/3-layer-perceptron
-/CNN
-/attention
-/chiner_seq2seq
-/chiner_seq2seqex
-/dataset
-/word2vec
-!vocab.*
-
 result/
 chiner_seq2seq/dataset/
 chiner_seq2seqex/dataset/

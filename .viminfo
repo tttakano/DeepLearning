@@ -137,10 +137,10 @@ $
 	*
 
 # ファイルマーク:
-'0  9  7  ~/.gitignore
-'1  11  1  ~/.gitignore
+'0  1  0  ~/.gitignore
+'1  1  83  ~/.gitignore
 '2  1  0  ~/.gitignore
-'3  10  8  ~/.gitignore
+'3  1  81  ~/.gitignore
 '4  1  0  ~/chiner_seq2seqex/seq2seqex.py
 '5  87  0  ~/chiner_seq2seqex/seq2seqex.py
 '6  70  0  ~/chiner_seq2seqex/chainerex.ipynb
@@ -149,10 +149,7 @@ $
 '9  115  0  ~/chiner_seq2seqex/doubleLSTM.py
 
 # ジャンプリスト (新しいものが先):
--'  9  7  ~/.gitignore
 -'  1  0  ~/.gitignore
--'  11  1  ~/.gitignore
--'  10  8  ~/.gitignore
 -'  1  0  ~/chiner_seq2seqex/seq2seqex.py
 -'  87  0  ~/chiner_seq2seqex/seq2seqex.py
 -'  70  0  ~/chiner_seq2seqex/chainerex.ipynb
@@ -163,11 +160,11 @@ $
 -'  115  0  ~/chiner_seq2seqex/doubleLSTM.py
 -'  1  0  ~/chiner_seq2seqex/doubleLSTM.py
 -'  16  86  ~/chiner_seq2seqex/dataset/train.en
--'  19  1  ~/.gitignore
--'  18  29  ~/.gitignore
--'  15  24  ~/.gitignore
--'  17  25  ~/.gitignore
--'  16  23  ~/.gitignore
+-'  7  1  ~/.gitignore
+-'  6  29  ~/.gitignore
+-'  3  24  ~/.gitignore
+-'  5  25  ~/.gitignore
+-'  4  23  ~/.gitignore
 -'  8  0  ~/DeepLeaning/dataset
 -'  1  0  ~/DeepLeaning/dataset/_train1000.en
 -'  1  0  ~/DeepLeaning/dataset
@@ -246,25 +243,27 @@ $
 -'  709062  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.jp
 -'  1  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.jp
 -'  709062  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.en
--'  8  0  ~/chiner_seq2seqex
 
 # ファイル内マークの履歴 (新しいものから古いもの):
 
 > ~/.gitignore
-	"	9	7
-	^	11	1
-	.	11	0
+	"	1	0
+	^	1	0
+	.	2	0
 	+	1	25
-	+	16	24
-	+	17	0
-	+	14	23
-	+	15	24
-	+	18	30
-	+	19	2
-	+	20	0
-	+	4	19
-	+	10	9
-	+	11	0
+	+	4	24
+	+	5	0
+	+	2	23
+	+	3	24
+	+	6	30
+	+	7	2
+	+	8	0
+	+	1	19
+	+	1	82
+	+	1	82
+	+	1	0
+	+	1	0
+	+	2	0
 
 > ~/chiner_seq2seqex/seq2seqex.py
 	"	1	0
