@@ -137,20 +137,21 @@ $
 	*
 
 # ファイルマーク:
-'0  11  1  ~/.gitignore
-'1  1  0  ~/.gitignore
-'2  10  8  ~/.gitignore
-'3  1  0  ~/chiner_seq2seqex/seq2seqex.py
-'4  87  0  ~/chiner_seq2seqex/seq2seqex.py
-'5  70  0  ~/chiner_seq2seqex/chainerex.ipynb
-'6  10  0  ~/chiner_seq2seqex/dataset/train.en
-'7  8  0  ~/chiner_seq2seqex
-'8  115  0  ~/chiner_seq2seqex/doubleLSTM.py
-'9  16  86  ~/chiner_seq2seqex/dataset/train.en
+'0  9  7  ~/.gitignore
+'1  11  1  ~/.gitignore
+'2  1  0  ~/.gitignore
+'3  10  8  ~/.gitignore
+'4  1  0  ~/chiner_seq2seqex/seq2seqex.py
+'5  87  0  ~/chiner_seq2seqex/seq2seqex.py
+'6  70  0  ~/chiner_seq2seqex/chainerex.ipynb
+'7  10  0  ~/chiner_seq2seqex/dataset/train.en
+'8  8  0  ~/chiner_seq2seqex
+'9  115  0  ~/chiner_seq2seqex/doubleLSTM.py
 
 # ジャンプリスト (新しいものが先):
--'  11  1  ~/.gitignore
+-'  9  7  ~/.gitignore
 -'  1  0  ~/.gitignore
+-'  11  1  ~/.gitignore
 -'  10  8  ~/.gitignore
 -'  1  0  ~/chiner_seq2seqex/seq2seqex.py
 -'  87  0  ~/chiner_seq2seqex/seq2seqex.py
@@ -250,9 +251,9 @@ $
 # ファイル内マークの履歴 (新しいものから古いもの):
 
 > ~/.gitignore
-	"	11	1
-	^	11	2
-	.	11	2
+	"	9	7
+	^	11	1
+	.	11	0
 	+	1	25
 	+	16	24
 	+	17	0
@@ -263,7 +264,7 @@ $
 	+	20	0
 	+	4	19
 	+	10	9
-	+	11	2
+	+	11	0
 
 > ~/chiner_seq2seqex/seq2seqex.py
 	"	1	0

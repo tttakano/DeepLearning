@@ -8,7 +8,7 @@
 /chiner_seq2seqex
 /dataset
 /word2vec
-/vocab.*
+!vocab.*
 
 result/
 chiner_seq2seq/dataset/
