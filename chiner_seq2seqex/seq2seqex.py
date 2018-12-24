@@ -57,7 +57,8 @@ class Seq2seq(chainer.Chain):
             self.encoder = L.NStepLSTM(n_layers, n_units, n_units, 0.1)
             self.decoder = L.NStepLSTM(n_layers, n_units, n_units, 0.1)
             # add
-            self.connecter = L.Linear(None, n_units*batch_size)######################################
+            self.connecter = L.Linear(None, n_units*batch_size)##############
+            #self.connecter = L.Linear(None, n_units)?
             # end
             self.W = L.Linear(n_units, n_target_vocab)
             
@@ -206,7 +207,7 @@ class CalculateBleu(chainer.training.Extension):
     priority = chainer.training.PRIORITY_WRITER
 
     def __init__(
-            self, model, test_data, key, batch=1, device=-1, max_length=50):  # todo change batch size
+            self, model, test_data, key, batch=128, device=-1, max_length=50):  #change batch size
         self.model = model
         self.test_data = test_data
         self.key = key
@@ -278,7 +279,7 @@ def main():
                         help='source sentence list for validation')
     parser.add_argument('--validation-target', default="./dataset/test.jp",
                         help='target sentence list for validation')
-    parser.add_argument('--batchsize', '-b', type=int, default=128,
+    parser.add_argument('--batchsize', '-b', type=int, default=48,
                         help='number of sentence pairs in each mini-batch')
     parser.add_argument('--epoch', '-e', type=int, default=100,
                         help='number of sweeps over the dataset to train')
@@ -299,10 +300,10 @@ def main():
     parser.add_argument('--max-target-sentence', type=int, default=50,
                         help='maximum length of target sentence')
     parser.add_argument('--log-interval', type=int, default=100,
-                        help='number of iteration to show log')
-    parser.add_argument('--validation-interval', type=int, default=4000,
+                        help='number of iteration to show log(short)')
+    parser.add_argument('--validation-interval', type=int, default=5000,
                         help='number of iteration to evlauate the model '
-                             'with validation dataset')
+                             'with validation dataset(long)')
     parser.add_argument('--out', '-o', default='result',
                         help='directory to output the result')
     args = parser.parse_args()
@@ -388,7 +389,7 @@ def main():
             translate, trigger=(args.validation_interval, 'iteration'))
         trainer.extend(
             CalculateBleu(
-                model, test_data, 'validation/main/bleu', device=args.gpu),
+                model, test_data, 'validation/main/bleu', batch=args.batchsize, device=args.gpu),
             trigger=(args.validation_interval, 'iteration'))
 
     print('start training')

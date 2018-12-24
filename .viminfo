@@ -18,8 +18,8 @@ $
 
 # コマンドライン 項目の履歴 (新しいものから古いものへ):
 :wq
-:q
 :q!
+:q
 :%s/\n\n/\r** /g
 :%s/\n\n/\r **/g
 :p
@@ -55,101 +55,66 @@ $
 # レジスタ:
 "0	CHAR	0
 	*
+""1	LINE	0
+	** 研究
 "2	LINE	0
-	#!/usr/bin/env python
-	
-	import argparse
-	
-	from nltk.translate import bleu_score
-	import numpy
-	import progressbar
-	import six
-	
-	import chainer
-	from chainer import cuda
-	import chainer.functions as F
-	import chainer.links as L
-	from chainer import training
-	from chainer.training import extensions
-	import matplotlib as mpl
-	
-	#chainer.set_debug(True)
-	
-	mpl.use('Agg')
-	
-	UNK = 0
-	EOS = 1
-	
-	'''
-	ex)
-	xs=[[i, am, taro],[i, was, born, in, japan],[i, love, music],[how,are,you]]
-	ex=[i, am, taro,i, was, born, in, japan,i, love, music,how,are,you]
-	exs=[[i, am, taro],[i, was, born, in, japan],[i, love, music],[how,are,you]](embed by neural network)
-	'''
-	
-	
-	def sequence_embed(embed, xs):
-	    x_len = [len(x) for x in xs]
-	    x_section = numpy.cumsum(x_len[:-1])
-	    ex = embed(F.concat(xs, axis=0))
-	    exs = F.split_axis(ex, x_section, 0)
-	    return exs
-	
-	
-	"""            
-	            hx, cx, _ = self.encoder(None, None, exs)
-	            _, _, os = self.decoder(hx, cx, eys)
-	            concat_os = F.concat(os, axis=0)
-	            concat_ys_out = F.concat(ys_out, axis=0)            
-	            return F.sum(F.softmax_cross_entropy(self.W(concat_os), concat_ys_out, reduce='no')) / batch
-	"""
-	
-	
-	class Seq2seq(chainer.Chain):
+	** 図書館
 "3	LINE	0
-	messhu
-	
-	the artist ' s life
-	
-	a rat drawn in tears
-	
-	deification
-	
-	national treasures
-	
-	major important cultural properties
-	
-	references
-	
-	known as sesshu ( 0000 - 0000 ) , he was an ink painter and zen monk active in the muromachi period in the latter half of the 00th century , and was called a master painter .
-	he revolutionized the japanese ink painting .
-	
-	he was given the posthumous name " toyo " or " sesshu ( 拙宗 ) . "
-	born in bicchu province , he moved to suo province after entering sshokoku-ji temple in kyoto .
-	later he accompanied a mission to ming dynasty china and learned chinese ink painting .
+	** 附属 機関
 "4	LINE	0
-	      logs.append(log)#log
+	** 別 科
 "5	LINE	0
-	      log={"epoch":epoch, "loss":loss} #log
+	** 大学院
+"6	LINE	0
+	** 学部
+"7	LINE	0
+	** 組織
+"8	LINE	0
+	** 教育 および 研究
+"9	LINE	0
+	** 所在地
 "g	CHAR	0
 	
 "-	CHAR	0
-	*
+	o
 
 # ファイルマーク:
 '0  1  0  ~/.gitignore
-'1  1  83  ~/.gitignore
-'2  1  0  ~/.gitignore
-'3  1  81  ~/.gitignore
-'4  1  0  ~/chiner_seq2seqex/seq2seqex.py
-'5  87  0  ~/chiner_seq2seqex/seq2seqex.py
-'6  70  0  ~/chiner_seq2seqex/chainerex.ipynb
-'7  10  0  ~/chiner_seq2seqex/dataset/train.en
-'8  8  0  ~/chiner_seq2seqex
-'9  115  0  ~/chiner_seq2seqex/doubleLSTM.py
+'1  63  0  ~/chiner_seq2seqex/result/mylog.txt
+'2  21456  0  ~/chiner_seq2seqex/dataset/test.jp
+'3  21456  0  ~/chiner_seq2seqex/dataset/test.en
+'4  21437  0  ~/chiner_seq2seqex/dataset/test.en
+'5  1687  0  ~/chiner_seq2seqex/mylog.txt
+'6  1  0  ~/chiner_seq2seqex/untitled.txt
+'7  1  0  ~/chiner_seq2seqex/result/log
+'8  13  0  ~/chiner_seq2seqex/result/mylot.txt
+'9  1  0  ~/chiner_seq2seqex/result/mylot.txt
 
 # ジャンプリスト (新しいものが先):
 -'  1  0  ~/.gitignore
+-'  63  0  ~/chiner_seq2seqex/result/mylog.txt
+-'  45  0  ~/chiner_seq2seqex/result/mylog.txt
+-'  1  0  ~/chiner_seq2seqex/result/mylog.txt
+-'  21456  0  ~/chiner_seq2seqex/dataset/test.jp
+-'  14  0  ~/chiner_seq2seqex/dataset/test.jp
+-'  1  0  ~/chiner_seq2seqex/dataset/test.jp
+-'  21456  0  ~/chiner_seq2seqex/dataset/test.en
+-'  14  0  ~/chiner_seq2seqex/dataset/test.en
+-'  1  0  ~/chiner_seq2seqex/dataset/test.en
+-'  21437  0  ~/chiner_seq2seqex/dataset/test.en
+-'  21430  0  ~/chiner_seq2seqex/dataset/test.en
+-'  21397  0  ~/chiner_seq2seqex/dataset/test.en
+-'  1687  0  ~/chiner_seq2seqex/mylog.txt
+-'  1  0  ~/chiner_seq2seqex/mylog.txt
+-'  1  0  ~/chiner_seq2seqex/untitled.txt
+-'  1  0  ~/chiner_seq2seqex/result/log
+-'  13  0  ~/chiner_seq2seqex/result/mylot.txt
+-'  1  0  ~/chiner_seq2seqex/result/mylot.txt
+-'  5  0  ~/chiner_seq2seqex/dataset/vocab.en
+-'  1  0  ~/chiner_seq2seqex/dataset/vocab.en
+-'  19  0  ~/chiner_seq2seqex/dataset/vocab.en
+-'  20901  0  ~/chiner_seq2seqex/dataset/test.en
+-'  210  0  ~/chiner_seq2seqex/dataset/test.en
 -'  1  0  ~/chiner_seq2seqex/seq2seqex.py
 -'  87  0  ~/chiner_seq2seqex/seq2seqex.py
 -'  70  0  ~/chiner_seq2seqex/chainerex.ipynb
@@ -177,9 +142,7 @@ $
 -'  1  0  ~/chiner_seq2seq/dataset/pncKyotoAll.en
 -'  1  0  ~/chiner_seq2seq/dataset/train.jp
 -'  119  0  ~/chiner_seq2seqex/mylog.txt
--'  1  0  ~/chiner_seq2seqex/mylog.txt
 -'  29  0  ~/chiner_seq2seqex/mylog.txt
--'  1  0  ~/chiner_seq2seqex/result/log
 -'  40  0  ~/chiner_seq2seqex/result/log
 -'  1  0  ~/chiner_seq2seqex/dataset/inter
 -'  1  0  ~/chiner_seq2seqex/dataset/sepalate_train.en
@@ -191,7 +154,6 @@ $
 -'  1144  0  ~/chiner_seq2seqex/mylog.txt
 -'  4013  0  ~/chiner_seq2seqex/mylog.txt
 -'  1  0  ~/chiner_seq2seqex/seq2seqex
--'  1  0  ~/chiner_seq2seqex/dataset/vocab.en
 -'  40000  0  ~/chiner_seq2seqex/dataset/vocab.jp
 -'  1  0  ~/chiner_seq2seqex/dataset/vocab.jp
 -'  40000  0  ~/chiner_seq2seqex/dataset/vocab.en
@@ -202,11 +164,7 @@ $
 -'  1  0  ~/chiner_seq2seqex/dataset/wmt_preprocess.py
 -'  64  4  ~/chiner_seq2seqex/dataset/wmt_preprocess.py
 -'  11  0  ~/chiner_seq2seqex/dataset/wmt_preprocess.py
--'  21475  0  ~/chiner_seq2seqex/dataset/test.jp
--'  1  0  ~/chiner_seq2seqex/dataset/test.jp
 -'  1  0  ~/chiner_seq2seqex/dataset/test.j@
--'  21475  0  ~/chiner_seq2seqex/dataset/test.en
--'  1  0  ~/chiner_seq2seqex/dataset/test.en
 -'  429519  0  ~/chiner_seq2seqex/dataset/tmp/ParsedContextLongCuttedAll.en
 -'  1  0  ~/chiner_seq2seqex/dataset/tmp/ParsedContextLongCuttedAll.en
 -'  1  2  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
@@ -230,19 +188,6 @@ $
 -'  9  55  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
 -'  293223  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
 -'  293215  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  19  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  72  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  484615  158  ~/chiner_seq2seqex/dataset/pncKyotoAll.jp
--'  1  0  ~/chiner_seq2seqex/dataset/pncKyotoAll.jp
--'  1  0  ~/chiner_seq2seqex/dataset/pncKyotoAll.ja
--'  484664  0  ~/chiner_seq2seqex/dataset/pncKyotoAll.en
--'  1  0  ~/chiner_seq2seqex/dataset/pncKyotoAll.en
--'  293201  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  653851  0  ~/chiner_seq2seqex/dataset/interjp
--'  429479  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
--'  709062  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.jp
--'  1  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.jp
--'  709062  0  ~/chiner_seq2seqex/dataset/pwcKyotoAll.en
 
 # ファイル内マークの履歴 (新しいものから古いもの):
 
@@ -264,6 +209,37 @@ $
 	+	1	0
 	+	1	0
 	+	2	0
+
+> ~/chiner_seq2seqex/result/mylog.txt
+	"	63	0
+
+> ~/chiner_seq2seqex/dataset/test.jp
+	"	21456	0
+	.	14	0
+	+	14	0
+
+> ~/chiner_seq2seqex/dataset/test.en
+	"	21456	0
+	.	14	0
+	+	14	0
+
+> ~/chiner_seq2seqex/mylog.txt
+	"	1687	0
+	^	1650	0
+	.	1	1
+	+	1	1
+
+> ~/chiner_seq2seqex/untitled.txt
+	"	1	0
+
+> ~/chiner_seq2seqex/result/log
+	"	1	0
+
+> ~/chiner_seq2seqex/result/mylot.txt
+	"	13	0
+
+> ~/chiner_seq2seqex/dataset/vocab.en
+	"	5	0
 
 > ~/chiner_seq2seqex/seq2seqex.py
 	"	1	0
@@ -306,12 +282,6 @@ $
 > ~/chiner_seq2seq/dataset/train.jp
 	"	1	0
 
-> ~/chiner_seq2seqex/mylog.txt
-	"	119	0
-
-> ~/chiner_seq2seqex/result/log
-	"	1	0
-
 > ~/chiner_seq2seqex/dataset/inter
 	"	1	0
 
@@ -327,9 +297,6 @@ $
 > ~/chiner_seq2seqex/seq2seqex
 	"	1	0
 
-> ~/chiner_seq2seqex/dataset/vocab.en
-	"	1	0
-
 > ~/chiner_seq2seqex/dataset/vocab.jp
 	"	40000	0
 
@@ -339,14 +306,8 @@ $
 > ~/chiner_seq2seqex/dataset/wmt_preprocess.py
 	"	86	4
 
-> ~/chiner_seq2seqex/dataset/test.jp
-	"	21475	0
-
 > ~/chiner_seq2seqex/dataset/test.j@
 	"	1	0
-
-> ~/chiner_seq2seqex/dataset/test.en
-	"	21475	0
 
 > ~/chiner_seq2seqex/dataset/tmp/ParsedContextLongCuttedAll.en
 	"	429519	0
@@ -811,12 +772,3 @@ $
 
 > ~/dataset/train.en
 	"	1	0
-
-> ~/encdec/ne
-	"	1	0
-
-> ~/encdec/en
-	"	1	0
-
-> ~/encdec/test.csv
-	"	101	0

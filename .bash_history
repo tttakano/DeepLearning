@@ -1,156 +1,3 @@
-python setup.py egg_infopython
-python
-ls
-mv ncoKyotoAll.jp wcoKyotoAll.jp dataset/
-ls
-cd dataset/
-ls
-cd Kyoto-Corpus/
-ls
-tmux a -t 8
-ls
-vi pro.py
-python pro.py 
-vi pro.py
-python pro.py 
-vi pro.py
-python pro.py 
-vi pro.py
-python pro.py 
-vi pro.py
-python pro.py 
-vi pro.py
-rm pro.py 
-ls
-tmux
-tmux a -t 8
-ls
-cd dataset/
-ls
-cd Kyoto-Corpus/
-ls
-cd mecab-0.996/
-make
-mecab
-rm -rf mecab*
-ls
-cd ../
-ls
-rm -rf mecab-*
-ls
-nvidia-smi
-pstree -cpn
-ps aux
-nvidia-smi
-tmux ls
-tmux a -t 5
-tmux a -t 7
-nvidia-smi
-ls
-cp -r chiner_seq2seq chiner_seq2seqex
-ls
-python experiment.py 6000-700-700
-vi experiment.py 
-ls
-python experiment.py 6000-700-700
-ls
-;s
-ls
-python encdec.py 6000-500-500
-ls
-vi encdec.py 
-vi test_enc.py 
-python test_enc.py 6000-500-500.100
-vi encdec.py 
-mkdir 6000-500-500
-mv 6000-500-500.* 6000-500-500
-ls
-vi encdec.py 
-python encdec.py 6000-300-300
-s
-cd ../attention/
-ls
-python attention.py 6000-500-500
-cd ../encdec/
-python encdec.py 6000-500-500
-cd ../attention/
-ls
-mv attention.ipynb ip.ipynb
-ls
-python attention.py 6000-500-500
-vi attention.py 
-jobs
-fg %1
-ls
-vi attention.py 
-fg %1
-ls
-tmux ls
-tmux a -t 5
-tmux a -t 7
-tmux a -t 8
-nvidia-smi
-ps aux
-tmux a -t 8
-ls
-tmux ls
-nvidia-smi
-ps aux
-ls
-python seq2seq.py 
-jobs
-ls
-cd chiner_seq2seq
-ls
-python seq2seq.py 
-tmux
-tmux ls
-nvidia-smi
-tmux a -t 9
-nvidia-smi
-tmux ls
-tmux a -t 8
-ls
-cd dataset/
-ls
-touch ncKyotoval.en
-ls
-touch ncKyotoval.jp
-touch ncKyototra.jp
-mv ncKyotoval.jp ncKyototes.jp
-mv ncKyotoval.en ncKyototes.en
-ls
-touch ncKyototra.en
-ls
-tmux ls
-tmux a -t 10
-ls
-tmux a -t 8
-nvidia-smi
-ps aux
-ls
-cd encdec/
-ls
-vi encdec.py 
-cd ../
-ls
-cd dataset/
-ls
-cd Kyoto-Corpus/
-ls
-cd ../../
-ls
-cd e
-cd encdec/
-ls
-python encdec.py 6000-200-400ky
-ls
-cd ../
-ls
-cd dataset/
-ls
-cd Kyoto-Corpus/
-ls
 mecab -Owakachi ncKyotoAll.jp 
 pip istall mecab
 pip install mecab
@@ -1998,3 +1845,156 @@ git add .
 git commit -m "fixed ex"
 git push
 top 
+ls
+tmux
+nvidia-smi 
+ls
+nvidia-smi 
+ls
+tmux ls
+tmux a -t 0
+nvidia-sn
+nvidia-smi 
+top 1
+top
+ls
+nvidia-smi 
+ls
+cd chiner_seq2seqex/
+ls
+cd result/
+ls
+less mylot.txt 
+ls
+tmux a -t 0
+cd ../
+python seq2seqex.py 
+nvidia-smi 
+top 
+ls
+python seq2seqex.py 
+ls
+cd chiner_seq2seqex/
+ls
+cd dataset/
+ls
+nvidia-smi 
+ls
+vi test.en 
+python seq2seqex.py 
+cd ../
+python seq2seqex.py 
+nvidia-smi 
+jobs
+python seq2seqex.py 
+cd dataset/
+vi vocab.en 
+vi test.en 
+vi vocab.en 
+vi test.en 
+cd ../
+python seq2seqex.py 
+tmux
+nvidia-smi 
+top
+nvidia-smi 
+tmux a -t 0
+nvidia-smi 
+tmux a -t 0
+nvidia-smi 
+exit
+nvidia-smi 
+tmux a -t 0
+ls
+cd chiner_seq2seqex/
+ls
+cd result/
+ls
+vi mylot.txt 
+vi log 
+tmux a -t 0
+ls
+cd ../
+python seq2seqex.py 
+cd result/
+ls
+vi log 
+ls
+nvidia-smi 
+exit
+ls
+python seq2seqex.py > result/mylot.txt 
+ls
+cd chiner_seq2seqex/
+ls
+python seq2seqex.py > ./result/mylot.txt 
+ls
+cd result/
+ls
+vi log 
+ls
+cd ../
+ls
+cd dataset/
+ls
+cd ../
+cd result/
+ls
+tmux -a t -
+tmux -a t 0
+tmux a -t 0
+cd ../
+python seq2seqex.py > ./result/mylot.txt 
+ls
+python seq2seqex.py > ./result/mylot.txt 
+cd ../
+ls
+cd chiner_seq2seqex/
+python seq2seqex.py 
+nvidia-smi 
+cd result/
+ls
+vi log 
+vi mylot.txt 
+cd ../
+python seq2seqex.py > ./result/mylot.txt 
+ls
+cd chiner_seq2seqex/
+ls
+cd dataset/
+ls
+vi test.en 
+ls
+cp test.en cptest.en
+cp test.jp cptest.jp
+vi test.en 
+vi test.jp 
+ls
+cd ../result/
+ls
+rm mylot.txt 
+ls
+cd chiner_seq2seqex/
+python seq2seqex.py 
+nvidia-smi 
+python seq2seqex.py 
+tmux
+tmux a -t 1
+tmux ls
+tmux a -t 0
+tmux ls
+tmux a -t 2
+tmux ls
+tmux
+nvidia-smi 
+ls
+cd chiner_seq2seqex/
+ls
+vi untitled.txt 
+rm untitled.txt 
+ls
+vi mylog.txt 
+cat mylog.txt 
+ls
+rm mylog.txt 
+ls
