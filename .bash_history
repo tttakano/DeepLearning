@@ -1,521 +1,3 @@
-mecab -Owakachi ncKyotoAll.jp 
-pip istall mecab
-pip install mecab
-pip install mecab-python==0.996
-ptyhon 
-python 
-yum install mecab mecab-ipadic
-pip install mecab mecab-ipadic
-wget -O mecab-0.996.tar.gz "https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE"
-ls
-tar zxvf mecab-0.996.tar.gz
-cd mecab-0.996/
-./configure 
-make
-pythono
-mecab --version
-mecab
-cd ../
-ls
-cd mecab-ipadic-2.7.0-20070801
-./configure --with-charset=utf8
-make
-ls
-./configure --with-charset=utf8
-cd ../
-ls
-cd mecab-0.996/
-./configure 
-make
-cd ../
-cd 
-ls
-cd encdec/
-ls
-python encdec.py 6000-200-400kyoto
-ls
-ls
-tmux ls
-tmux a -t 
-tmux a -t 8
-tmux a -t 10
-nvidia-smi
-tmux a -t 8
-tmux a
-nvidia-smi
-tmux a
-nvidia-smi
-ls
-nvidia-smi
-ps aux
-ls
-la
-ls
-tmux a
-ls
-cd chiner_seq2seq
-ls
-cd result/
-ls
-vi log
-tmux 
-nvidia-smi
-cd ../
-ls
-python seq2seq.py 
-cd dataset/
-vi pncKyotoAll.en 
-vi pncKyotoAll.jp
-cd ../
-python wmt_preprocess.py 
-ls
-cd dataset/
-ls
-vi pncKyotoAll.en 
-vi pncKyotoAll.jp
-cd ../
-python seq2seq.py 
-ls
-tmux ls
-ls
-cd result/
-ls
-cd ../
-ls
-python seq2seq.py 
-ls
-nvidia-smi
-python seq2seq.py 
-ls
-vi chiner_seq2seq
-cd chiner_seq2seq
-ls
-python seq2seq.py 
-tmxu ls
-tmux ls
-tmux a -t 10
-tmux a -t 11
-ls
-tmux ls
-tmux
-tmus ls
-tmux ls
-tmux a 
-nvidia-smi
-tmux a 
-tmux ls
-tmux a
-ls
-tmux ls
-tmux a
-ls
-cat fdsa
-echo hello
-echo hello >> log.txt
-ls
-cat log.txt 
-rm log.txt 
-ls
-cd chiner_seq2seq
-ls
-caft log.txt 
-cat log.txt 
-tmux a
-ls
-tmux a
-ls
-at log.txt 
-cat log.txt 
-vi log.txt 
-ls
-vi time.py
-ptyhon time.py 
-python time.py 
-vi time.py
-python time.py 
-python time.py >> time.txt
-vi time.txt 
-python time.py >> time.txt &
-cat time.
-cat time.txt 
-jobs
-ls
-cat log.txt 
-cat time.txt 
-rm t*
-ls
-cd ../
-ls
-cd encdec/
-ls
-mkdir 6000-200-400k
-mv 6000-200-400k.* 6000-200-400k
-ls
-mv 6000-200-400kyoto. 6000-200-400k
-mv 6000-200-400kyoto.* 6000-200-400k
-ls
-vi take.txt 
-python test_enc.py 6000-200-400k/6000-200-400kyoto.100
-ls
-cd dataset/
-ls
-nkf -k ncKyototes.jp 
-nkf -g ncKyototes.jp 
-nkf -s ncKyototes.jp ncKyototes.shiftjs.jp
-nkf -s ncKyototes.jp > ncKyototes.shiftjs.jp
-cd ../
-ls
-tmux a
-ls
-cat log.txt 
-tmux a 
-tmux a
-ls
-exit
-tmux a
-ls
-cd chiner_seq2seq
-ls
-cd result/
-ls
-vi log 
-ls
-cd ../
-ls
-cd ../
-ls
-cd chiner_seq2seqex/
-ls
-python seq2seqex.py 
-ls
-cd ../
-ls
-rm -rf expriment/
-ls
-cd attention/
-ls
-rm 6000-500-500.0*
-ls
-cd ../
-ls
-cd chiner_seq2seqex/
-python seq2seqex.py 
-tmux a
-python seq2seqex.py 
-python
-python seq2seqex.py 
-python
-python seq2seqex.py 
-ls
-tmux a
-cd ../chiner_seq2seq
-ls
-cd result/
-ls
-tmux a
-ls
-python seq2seq.py 
-tmux ls
-tmux a -t 
-nvidia-smi
-python seq2seq.py 
-nvidi-smi
-python seq2seq.py 
-python seq2seq.py >> log.txt
-ls
-vi log.txt 
-cd result/
-ls
-mkdir 700
-mv snapshot_epoch-* 700/
-ls
-mv lo* 700/
-mv 700 500
-ls
-cd ../
-python seq2seq.py 
-python seq2seq.py > log.txt
-ls
-cd result/
-ls
-cat log 
-ls
-cat 40000-1024-3 
-ls
-cd ../
-ls
-cd result/
-ls
-cd 500/
-ls
-cd ../
-ls
-mkdir unit700
-ls
-mv snapshot_epoch-* unit700/
-ls
-mv 500 unit500
-ls
-cd ../
-ls
-python seq2seq.py 
-ls
-cd result/
-ls
-cat 40000-1024-3 
-ls
-rm 40000-1024-3 
-ls
-mv lo* unit700/
-ls
-cd ../
-ls
-cat log.txt 
-ls
-mv log.txt result/unit700/
-ls
-cd result/
-l
-cd unit
-ls
-cd unit500/
-ls
-vi log 
-cd ../
-ls
-cd unit700/
-ls
-vi log
-cd ../
-ls
-mv unit700 unit700-100
-ls
-cd ../
-l
-python seq2seq.py > log.txt
-ls
-cd result/
-ls
-cd ../
-ls
-cd ../chiner_seq2seqex/
-ls
-cd ../chiner_seq2seq
-ls
-cd dataset/
-ls
-vi pncKyotoAll.en 
-vi pncKyototra.en 
-vi pncKyotoAll.en 
-vi pncKyototes.en 
-cd ../
-ls
-cd result/
-ls
-cd ../
-l
-python seq2seq.py 
-python seq2seq.py > log.txt
-cd result/
-ls
-cd unit700-100/
-rm *
-ls
-cd ../
-ls
-mv snapshot_epoch-* unit700-100/
-ls
-mv lo* unit700-100/
-ls
-mv unit500 500unit
-mv unit700-100 700unit
-ls
-cd ../
-ls
-python seq2seq.py > log.txt
-ls
-python seq2seq.py > result/log.txt
-ls
-cd result/
-ls
-cd ../
-ls
-cd result/
-ls
-vi log
-ls
-mkdir 600unit
-ls
-mv snapshot_epoch-* 600unit/
-ls
-mv lo* 600unit/
-ls
-cd ../
-ls
-cd ../chiner_seq2seq
-ls
-cd ../chiner_seq2seqex/
-ls
-cd result/
-ls
-cd ../
-ls
-ls
-tmux a
-tmux ls
-tmux a
-tmux 
-tmux ls
-tmux a
-ls
-cd chiner_seq2seqex/
-ls
-cd result/
-ls
-vi log
-vi log.txt 
-ls
-lsd
-ls
-vi log.txt 
-vi log
-ls
-vi log
-ls
-cd ../
-ls
-cd ../
-ls
-cd ttakano/
-ls
-cd chiner_seq2seq
-ls
-cd dataset/
-ls
-vi pncKyotoAll.en 
-ls
-nvidia-smi
-ps -u
-ps -a
-ps -A
-ps -x
-nvidia-smi
-ps -x
-nvidia-smi
-ps aux
-kill 37377
-nvidia-smi
-ls
-cd ../
-ls
-cd re
-l
-cd result/
-ls
-cd 600unit/
-ls
-cd ../
-l
-cd ../
-ls
-cd result/
-ls
-cd ../
-python seq2seq.py > result/log.txt
-ls
-tmux 
-tmux ls
-nvidia-smi
-ls
-tmux a -t 0
-ls
-exit
-tmux ls
-tmux ls a -t 0
-tmux a -t 0
-tmux a -t 1
-tmux a -t 0
-ls
-cd chiner_seq2seqex/
-ls
-cd dataset/
-ls
-vi pncKyotoAll.en 
-vi pwcKyotoAll.en
-vi pwcKyotoAll.ja
-vi pwcKyotoAll.jp 
-cd ../
-ls
-tmux a -t 0
-ls
-cd re
-l
-cd result/
-ls
-vi log
-tmux a -t 0
-vi log.txt 
-tmux a -t 0
-ls
-vi log
-cd ../
-ls
-cd dataset/
-ls
-vi pwcKyotoAll.en 
-cd ../result/
-ls
-vi log
-cd dataset/
-cd ../dataset/
-vi pwcKyotoAll.en 
-ls
-cd ../
-l
-tmux a -t 0
-ls
-cd result/
-ls
-vi log
-tmux a -t 0
-cd ../
-ls
-cd result/
-ls
-vi log
-cd ../
-ls
-python seq2seqex.py 
-cd dataset/
-vi pwcKyotoAll.en 
-ls
-cd chiner_seq2seqex/
-ls
-cd dataset/
-ls
-vi pwcKyotoAll.en 
-tmux a -t 0
-;s
-ls
-cd ../
-python seq2seqex.py 
-ls
-exit
-ls
-cd chiner_seq2seqex/
-ls
-python seq2seqex.py 
-tmux ls
-python seq2seqex.py 
-ls
-cd chiner_seq2seqex/
-python seq2seqex.py 
-ls
-cd chiner_seq2seq
-cd ../chiner_seq2seqex/
-ls
-python seq2seqex.py 
-ls
 cd encdec/
 ls
 rm -rf 6000-*
@@ -1998,3 +1480,521 @@ cat mylog.txt
 ls
 rm mylog.txt 
 ls
+cd chiner_seq2seqex/
+tmux ls
+nvidia-smi 
+tmux a -t 0
+nvidia-smi 
+ls
+cd ../
+cd chiner_seq2seqex/
+cd dataset/
+ls
+mv test.* ../
+ls
+cd ../
+ls
+cd ../
+ls
+vi .gitignore 
+git add .
+git commit -m "add test"
+git push
+git config --global push.default simple
+nvidia-smi 
+ls
+tmux a -t 0
+ls
+cd chiner_seq2seqex/
+ls
+cd result/
+ls
+vi log 
+vi mylog.txt 
+ls
+cd ../
+ls
+cd dataset/
+ls
+cd ../
+ls
+cd dataset/
+ls
+vi train.en 
+cd ../
+ls
+mv test.* dataset/
+ls
+cd dataset/
+ls
+cd ../
+cd dataset/
+l
+vi train.en 
+vi test.en 
+vi test.jp 
+vi test.en 
+cd ../
+python seq2seqex.py 
+ls
+cd dataset/
+ls
+vi test.en 
+vi test.jp 
+python seq2seqex.py 
+cd ../
+python seq2seqex.py 
+ls
+cd chiner_seq2seqex/
+ls
+python seq2seqex.py 
+ls
+cd chiner_seq2seqex/
+ls
+cd dataset/
+ls
+vi test.en 
+head 5 test.en 
+head -n 5 test.en 
+head -n 12 test.en > ttest.en 
+head -n 12 test.jp > ttest.jp
+ls
+head -n 100 train.en > ttrain.en
+head -n 100 train.jp > ttrain.jp
+ls
+cd chiner_seq2seqex/
+python seq2seqex.py 
+cd chiner_seq2seqex/
+python seq2seqex.py 
+ls
+python seq2seqex.py > ./result/mylog.txt 
+ls
+cd result/
+ls
+vi mylog.txt 
+cd ../
+ls
+python seq2seqex.py > ./result/mylog.txt 
+cd chiner_seq2seqex/
+python seq2seqex.py 
+ls
+cd dataset/
+ls
+vi ttrain.en 
+cd ../
+python seq2seqex.py 
+cd dataset/
+ls
+vi ttrain.en 
+vi ttrain.jp 
+cd ../
+python seq2seqex.py 
+ls
+cd result/
+ls
+rm *
+ls
+cd ../
+python seq2seqex.py 
+ls
+cd result/
+ls
+rm *
+cd ../
+cd chiner_seq2seqex/
+python seq2seqex.py 
+cd result/
+ls
+vi bleu.csv 
+cd ../
+python seq2seqex.py 
+python seq2seqex.py > a
+ls
+vi a 
+ls
+cd result/
+ls
+vi log 
+cd ../
+ls
+rm a 
+cd result/
+vi log 
+cd ../
+python seq2seqex.py 
+ls
+cd ../
+cd chiner_seq2seqex/
+python seq2seqex.py 
+ls
+cd result/
+ls
+vi translate.txt 
+ls
+cd ../
+;s
+ls
+python seq2seqex.py 
+cd result/
+ls
+vi translate.txt 
+cd ../
+python seq2seqex.py 
+cd result/
+vi translate.txt ]
+rm translate.txt 
+ls
+rm *
+cd ../
+python seq2seqex.py 
+cd result/
+ls
+cd ../
+vi tra
+vi translate.txt 
+python seq2seqex.py 
+ls
+vi translate.txt 
+rm translate.txt 
+cd result/
+ls
+vi translate.txt 
+cd ../
+python seq2seqex.py 
+ls
+cd result/
+ls
+vi translate.txt 
+cd ../
+python seq2seqex.py 
+cd result/
+ls
+vi translate.txt 
+rm * 
+cd ../result/
+ls
+cd ../dataset/
+ls
+wc -l train.en 
+cd ../
+tmux
+ls
+nvidia-smi 
+ls
+tmux a -t 0
+python seq2seqex.py 
+nvidia-smi 
+ls
+tmux a -t 0
+nvidia-smi 
+tmux ls
+tmux a -t 1
+ls
+ps -aux | ttakano
+ps -aux | grep ttakano
+ls
+cd ../
+cd chiner_seq2seq
+ls
+cd result/
+ls
+cd 100_500/
+ls
+cd ../300_500/
+ls
+cd ../
+ls
+cd ../
+ls
+nvidia-smi 
+ls
+tmux a -t 1
+nvidia-smi 
+tmux a -t 1
+ls
+cd chiner_seq2seqex/
+ls
+nvidia-smi 
+ls
+cd ../chiner_seq2seq
+ls
+cd result/
+ls
+cd 100_500/
+ls
+vi log 
+file log 
+file -f 
+file -f log 
+vi log 
+ls
+tmux a -t 1
+ls
+nvidia-smi 
+ps -aux | grep ttakano
+ls
+cd chiner_seq2seqex/
+ls
+nvidia-smi 
+ls
+tmux a -t 1
+ls
+cd chiner_seq2seq
+nvidia-smi 
+ls
+cd ../
+cd chiner_seq2seqex/
+ls
+vi seq2seqex.py 
+tmux a -t 1
+ls
+ls
+python seq2seqex.py 
+ls
+cd result/
+ls
+vi translate.txt 
+mkdir 300-100
+mv log loss.png snapshot_epoch-67 translate.txt 
+mv log loss.png snapshot_epoch-67 translate.txt 300-100/
+ls
+rm snapshot_epoch-*
+cd 300-100/
+ls
+ls -lh
+df ^k
+df -k
+df -h
+fdisk -l
+df -h
+ls
+cd chiner_seq2seqex/
+ls
+cd result/
+ls
+cd ../
+ls
+vi seq2seqex.py 
+tmux a -t 1
+tmux ls
+tmux
+nvidia-smi 
+tmux ls
+nvidia-sn
+nvidia-smi 
+ls
+tmux a -t 0
+ls
+cd chiner_seq2seqex/
+ls
+cd result/
+ls
+nvidia-smi 
+ls
+tmux a -t
+tmux a -t 0
+ls
+cd chiner_seq2seqex/
+cd result/
+ls
+nvidia-modprobe 
+nvidia-smi 
+tmux a -t 0
+nvidia-smi 
+cd chiner_seq2seqex/
+ls
+cd result/
+ls
+mkdir 300-200
+ls
+mv snapshot_epoch-80 300-200/
+ls
+rm snapshot_epoch-*
+tmux a -t 0
+nvidia-smi 
+tmux a -t 0
+cd chiner_seq2seqex/
+ls
+cd result/
+ls
+mv snapshot_epoch-* 300-200/
+ls
+cd 300-200/
+ls
+mv snapshot_epoch-140 ../
+ls
+rm *
+ls
+cd ../
+ls
+nvidia-smi 
+tmux a -t 0
+ls
+cd chiner_seq2seqex/
+;s
+ls
+cd dataset/
+ls
+wc -l train.en 
+tmux a -t 0
+ls
+cd ../
+ls
+cp seq2seqex.py cpseq2seqex.py 
+ls
+python seq2seqex.py 
+ls
+nvidia-smi 
+tmux a -t 0
+ls
+cd chiner_seq2seqex/
+ls
+cd result/
+ls
+cd 300-100/
+ls
+cd ../
+ls
+rm -rf 300-100/
+ls
+tmux a -t 0
+nvidia-smi 
+tmux a -t 0
+ls
+cd ../
+ls
+cd dataset/
+ls
+cp test.* train.* vocab.* ../../chiner_seq2seq/dataset/
+cd ../../chiner_seq2seq/dataset/
+ls
+tmux
+nvidia-smi 
+ls
+cd chiner_seq2seq
+ls
+cd result/
+ls
+tmux a -t 0
+nvidia-smi 
+ls
+cd 300_500/
+ls
+nvidia-smi 
+tmux a -t 0
+ls
+nvidia-smi 
+tmux a -t 0
+ls
+cd chiner_seq2seqex/
+ls
+cd result/
+ls
+cd 300-200/
+ls
+cd ../
+mv snapshot_epoch-* 300-200/
+cd 300-200/
+ls
+mv snapshot_epoch-190 ../
+ls
+mv snapshot_epoch-200 
+mv snapshot_epoch-200 ../
+ls
+rm *
+cd ../
+ls
+mv snapshot_epoch-* 300-200/
+ls
+mv * 300-200/
+ls
+cd ../
+cd result/300-200/
+ls
+cd ../../
+ls
+cd ../
+cd chiner_seq2seq
+ls
+cd result/
+ls
+rm -rf 100_500 300_500/
+ls
+mkdir 300-200
+mv snapshot_epoch-* 300-200/
+ls
+cd 300-200/
+ls
+mv snapshot_epoch-130 ../
+ls
+rm *
+cd ../
+ls
+cd ~
+ls
+cd chiner_seq2seq
+ls
+cp check.ipynb ~/chiner_seq2seqex/
+ls
+cd ../chiner_seq2seqex/l
+cd ../chiner_seq2seqex/
+cd result/
+ls
+cd ~
+ls
+cd ch
+cd chiner_seq2seq
+ls
+cd result/
+ls
+cp log 300-200/
+ls
+ls
+cd dataset/
+ls
+wc -l all_ja.txt 
+tmux ls
+nvidia-smi 
+ls
+tmux a -t 0
+ls
+nvidia-smi 
+tmux a -t 0
+cd chiner_seq2seqex/
+python validation.py 
+ls
+ls
+cd chiner_seq2seq
+python validation.py 
+vi translate.txt 
+python validation.py 
+ls
+wc -l translate.txt 
+ls
+cd dataset/
+ls
+wc -l test.en 
+cd ../
+python validation.py 
+ls
+vi translate.txt 
+wc -l translate.txt 
+rm train.*
+ls
+ls
+cd chiner_seq2seq
+ls
+cd dataset/
+l
+less test.jp 
+ls
+vi test.jp 
+ls
+wc -l test.en 
+ls
+cd chiner_seq2seq
+ls
+python seq2seq.py 
+tmux ;s
+tmux ls
+tmux a -t 0

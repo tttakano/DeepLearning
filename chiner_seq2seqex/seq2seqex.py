@@ -58,7 +58,7 @@ class Seq2seq(chainer.Chain):
             self.decoder = L.NStepLSTM(n_layers, n_units, n_units, 0.1)
             # add
             self.connecter = L.Linear(None, n_units*batch_size)##############
-            #self.connecter = L.Linear(None, n_units)?
+            self.cnt = 0
             # end
             self.W = L.Linear(n_units, n_target_vocab)
             
@@ -116,7 +116,6 @@ class Seq2seq(chainer.Chain):
 
         hx = new_hx
         
-        #sys.exit()
         #end############################################################################################################################
         _, _, os = self.decoder(hx, cx, eys)
 
@@ -135,7 +134,6 @@ class Seq2seq(chainer.Chain):
 
     def translate(self, xs, max_length=50):
         batch = len(xs)
-
         with chainer.no_backprop_mode(), chainer.using_config('train', False):
             xs = [x[::-1] for x in xs]
 
@@ -222,12 +220,13 @@ class CalculateBleu(chainer.training.Extension):
             for i in range(0, len(self.test_data), self.batch):
                 sources, targets = zip(*self.test_data[i:i + self.batch])
                 references.extend([[t.tolist()] for t in targets])
-
+                
                 sources = [
                     chainer.dataset.to_device(self.device, x) for x in sources]
                 ys = [y.tolist()
                       for y in self.model.translate(sources, self.max_length)]
                 hypotheses.extend(ys)
+                
 
         bleu = bleu_score.corpus_bleu(
             references, hypotheses,
@@ -281,7 +280,7 @@ def main():
                         help='target sentence list for validation')
     parser.add_argument('--batchsize', '-b', type=int, default=48,
                         help='number of sentence pairs in each mini-batch')
-    parser.add_argument('--epoch', '-e', type=int, default=100,
+    parser.add_argument('--epoch', '-e', type=int, default=400,
                         help='number of sweeps over the dataset to train')
     parser.add_argument('--gpu', '-g', type=int, default=0,
                         help='GPU ID (negative value indicates CPU)')
@@ -299,9 +298,9 @@ def main():
                         help='minimium length of target sentence')
     parser.add_argument('--max-target-sentence', type=int, default=50,
                         help='maximum length of target sentence')
-    parser.add_argument('--log-interval', type=int, default=100,
+    parser.add_argument('--log-interval', type=int, default=400,
                         help='number of iteration to show log(short)')
-    parser.add_argument('--validation-interval', type=int, default=5000,
+    parser.add_argument('--validation-interval', type=int, default=8940,
                         help='number of iteration to evlauate the model '
                              'with validation dataset(long)')
     parser.add_argument('--out', '-o', default='result',
@@ -334,6 +333,10 @@ def main():
     source_words = {i: w for w, i in source_ids.items()}
 
     model = Seq2seq(args.layer, len(source_ids), len(target_ids), args.unit, args.batchsize)
+    #add########################################
+    with open("./result/translate.txt", "w") as f:
+        f.write("")
+    #end########################################    
     if args.gpu >= 0:
         chainer.cuda.get_device(args.gpu).use()
         model.to_gpu(args.gpu)
@@ -354,7 +357,7 @@ def main():
         trigger=(args.log_interval, 'iteration'))
     trainer.extend(
         extensions.PlotReport(['main/loss', 'validationl/main/loss'], x_key='epoch', file_name='loss.png'))  # to plot
-    trainer.extend(extensions.snapshot(filename='snapshot_epoch-{.updater.epoch}'))
+    trainer.extend(extensions.snapshot(filename='snapshot_epoch-{.updater.epoch}'), trigger=(20, 'epoch'))
 
     if args.validation_source and args.validation_target:
         test_source = load_data(source_ids, args.validation_source)
@@ -375,22 +378,30 @@ def main():
 
         @chainer.training.make_extension()  # per 1 epoch
         def translate(trainer):
-            source, target = test_data[numpy.random.choice(len(test_data))]
-            result = model.translate([model.xp.array(source)])[0]
-
-            source_sentence = ' '.join([source_words[x] for x in source])
-            target_sentence = ' '.join([target_words[y] for y in target])
-            result_sentence = ' '.join([target_words[y] for y in result])
-            print('# source : ' + source_sentence)
-            print('#  result : ' + result_sentence)
-            print('#  expect : ' + target_sentence)
-
+            start = numpy.random.choice(len(test_data) - args.batchsize)
+            test = test_data[start: start + args.batchsize]
+            source = [cuda.cupy.asarray(s) for s, _ in test]  # [[sentence1], [sentence2], [sentence3], ...]
+            target = [cuda.cupy.asarray(t) for _, t in test]
+            result = model.translate(source)
+            #add#######################################
+            with open("./result/translate.txt", "a") as f:
+                f.write("epoch = {0}{1}".format(train_iter.epoch, '\n'))
+                for b in range(args.batchsize):
+                    source_sentence = ' '.join([source_words[int(x)] for x in source[b]])
+                    target_sentence = ' '.join([target_words[int(y)] for y in target[b]])
+                    result_sentence = ' '.join([target_words[int(y)] for y in result[b]])
+                    f.write('# source[{0}] : {1}{2}'.format(b, source_sentence, '\n'))
+                    f.write('# result[{0}] : {1}{2}'.format(b, result_sentence, '\n'))
+                    f.write('# expect[{0}] : {1}{2}'.format(b, target_sentence, '\n'))
+                f.write('\n')
+            #end#######################################
         trainer.extend(
             translate, trigger=(args.validation_interval, 'iteration'))
         trainer.extend(
             CalculateBleu(
                 model, test_data, 'validation/main/bleu', batch=args.batchsize, device=args.gpu),
             trigger=(args.validation_interval, 'iteration'))
+        trainer.extend(extensions.ProgressBar())        #add##################
 
     print('start training')
     trainer.run()

@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # 最後の 検索パターン:
-~MSle0~/\n\n
+~MSle0~/usr
 
 # 最後の Substitute 検索パターン:
 ~MSle0&\n\n
@@ -17,9 +17,10 @@
 $
 
 # コマンドライン 項目の履歴 (新しいものから古いものへ):
-:wq
-:q!
 :q
+:wq
+:q!q
+:q!
 :%s/\n\n/\r** /g
 :%s/\n\n/\r **/g
 :p
@@ -35,6 +36,7 @@ $
 :q!wq
 
 # 検索文字列 項目の履歴 (新しいものから古いものへ):
+?/usr/bin/env python
 ? @$
 ? \n\n
 ? \<雪舟\>
@@ -56,58 +58,108 @@ $
 "0	CHAR	0
 	*
 ""1	LINE	0
-	** 研究
+	** 雪舟
 "2	LINE	0
-	** 図書館
+	** 雪舟
 "3	LINE	0
-	** 附属 機関
+	** sesshu
 "4	LINE	0
-	** 別 科
+	** sesshu
 "5	LINE	0
-	** 大学院
+	** asia
 "6	LINE	0
-	** 学部
+	** アジア
 "7	LINE	0
-	** 組織
+	** 研究
 "8	LINE	0
-	** 教育 および 研究
+	** 図書館
 "9	LINE	0
-	** 所在地
+	** 附属 機関
 "g	CHAR	0
 	
 "-	CHAR	0
 	o
 
 # ファイルマーク:
-'0  1  0  ~/.gitignore
-'1  63  0  ~/chiner_seq2seqex/result/mylog.txt
-'2  21456  0  ~/chiner_seq2seqex/dataset/test.jp
-'3  21456  0  ~/chiner_seq2seqex/dataset/test.en
-'4  21437  0  ~/chiner_seq2seqex/dataset/test.en
-'5  1687  0  ~/chiner_seq2seqex/mylog.txt
-'6  1  0  ~/chiner_seq2seqex/untitled.txt
-'7  1  0  ~/chiner_seq2seqex/result/log
-'8  13  0  ~/chiner_seq2seqex/result/mylot.txt
-'9  1  0  ~/chiner_seq2seqex/result/mylot.txt
+'0  1  0  ~/chiner_seq2seq/translate.txt
+'1  15  0  ~/chiner_seq2seq/translate.txt
+'2  119  0  ~/chiner_seq2seqex/translate.txt
+'3  411  0  ~/chiner_seq2seqex/validation.py
+'4  146  0  ~/chiner_seq2seq/translate.txt
+'5  264  0  ~/chiner_seq2seq/validation.py
+'6  5  0  ~/chiner_seq2seq/translate.txt
+'7  360  81  ~/chiner_seq2seqex/seq2seqex.py
+'8  9746  0  ~/chiner_seq2seqex/result/translate.txt
+'9  283  59  ~/chiner_seq2seqex/seq2seqex.py
 
 # ジャンプリスト (新しいものが先):
+-'  1  0  ~/chiner_seq2seq/translate.txt
+-'  15  0  ~/chiner_seq2seq/translate.txt
+-'  119  0  ~/chiner_seq2seqex/translate.txt
+-'  1  0  ~/chiner_seq2seqex/translate.txt
+-'  411  0  ~/chiner_seq2seqex/validation.py
+-'  1  0  ~/chiner_seq2seqex/validation.py
+-'  412  0  ~/chiner_seq2seqex/validation.py
+-'  390  0  ~/chiner_seq2seqex/validation.py
+-'  146  0  ~/chiner_seq2seq/translate.txt
+-'  264  0  ~/chiner_seq2seq/validation.py
+-'  1  0  ~/chiner_seq2seq/validation.py
+-'  5  0  ~/chiner_seq2seq/translate.txt
+-'  360  81  ~/chiner_seq2seqex/seq2seqex.py
+-'  1  0  ~/chiner_seq2seqex/seq2seqex.py
+-'  9746  0  ~/chiner_seq2seqex/result/translate.txt
+-'  18  0  ~/chiner_seq2seqex/result/translate.txt
+-'  1  0  ~/chiner_seq2seqex/result/translate.txt
+-'  283  59  ~/chiner_seq2seqex/seq2seqex.py
+-'  34  0  ~/chiner_seq2seqex/seq2seqex.py
+-'  1  0  ~/chiner_seq2seq/result/100_500/log
+-'  10626  0  ~/chiner_seq2seq/result/100_500/log
+-'  10178  0  ~/chiner_seq2seq/result/100_500/log
+-'  1509  5  ~/chiner_seq2seq/result/100_500/log
+-'  165  0  ~/chiner_seq2seq/result/100_500/log
+-'  156  0  ~/chiner_seq2seq/result/100_500/log
+-'  28  0  ~/chiner_seq2seqex/result/translate.txt
+-'  39  0  ~/chiner_seq2seqex/result/translate.txt
+-'  22  0  ~/chiner_seq2seqex/result/translate.txt
+-'  3  0  ~/chiner_seq2seqex/translate.txt
+-'  19  0  ~/chiner_seq2seqex/translate.txt
+-'  1  0  ~/chiner_seq2seqex/tra
+-'  112  0  ~/chiner_seq2seqex/result/log
+-'  1  0  ~/chiner_seq2seqex/result/log
+-'  99  0  ~/chiner_seq2seqex/a
+-'  1  0  ~/chiner_seq2seqex/a
+-'  1  0  ~/chiner_seq2seqex/result/bleu.csv
+-'  1  0  ~/chiner_seq2seqex/dataset/ttrain.jp
+-'  1  0  ~/chiner_seq2seqex/dataset/ttrain.en
+-'  99  0  ~/chiner_seq2seqex/dataset/ttrain.en
+-'  46  0  ~/chiner_seq2seqex/dataset/ttrain.en
+-'  21456  104  ~/chiner_seq2seqex/dataset/test.en
+-'  21455  0  ~/chiner_seq2seqex/dataset/test.en
+-'  20503  0  ~/chiner_seq2seqex/dataset/test.en
+-'  1  0  ~/chiner_seq2seqex/dataset/test.en
+-'  2  2  ~/chiner_seq2seqex/dataset/test.jp
+-'  1  0  ~/chiner_seq2seqex/dataset/test.jp
+-'  2  6  ~/chiner_seq2seqex/dataset/test.en
+-'  21456  0  ~/chiner_seq2seqex/dataset/test.jp
+-'  21449  0  ~/chiner_seq2seqex/dataset/test.en
+-'  23  0  ~/chiner_seq2seqex/dataset/test.en
+-'  429519  0  ~/chiner_seq2seqex/dataset/train.en
+-'  1  0  ~/chiner_seq2seqex/dataset/train.en
+-'  64  0  ~/chiner_seq2seqex/result/mylog.txt
+-'  1  0  ~/chiner_seq2seqex/result/mylog.txt
+-'  353  0  ~/chiner_seq2seqex/result/log
+-'  67  0  ~/chiner_seq2seqex/result/log
 -'  1  0  ~/.gitignore
 -'  63  0  ~/chiner_seq2seqex/result/mylog.txt
 -'  45  0  ~/chiner_seq2seqex/result/mylog.txt
--'  1  0  ~/chiner_seq2seqex/result/mylog.txt
--'  21456  0  ~/chiner_seq2seqex/dataset/test.jp
 -'  14  0  ~/chiner_seq2seqex/dataset/test.jp
--'  1  0  ~/chiner_seq2seqex/dataset/test.jp
--'  21456  0  ~/chiner_seq2seqex/dataset/test.en
 -'  14  0  ~/chiner_seq2seqex/dataset/test.en
--'  1  0  ~/chiner_seq2seqex/dataset/test.en
 -'  21437  0  ~/chiner_seq2seqex/dataset/test.en
 -'  21430  0  ~/chiner_seq2seqex/dataset/test.en
 -'  21397  0  ~/chiner_seq2seqex/dataset/test.en
 -'  1687  0  ~/chiner_seq2seqex/mylog.txt
 -'  1  0  ~/chiner_seq2seqex/mylog.txt
 -'  1  0  ~/chiner_seq2seqex/untitled.txt
--'  1  0  ~/chiner_seq2seqex/result/log
 -'  13  0  ~/chiner_seq2seqex/result/mylot.txt
 -'  1  0  ~/chiner_seq2seqex/result/mylot.txt
 -'  5  0  ~/chiner_seq2seqex/dataset/vocab.en
@@ -115,12 +167,10 @@ $
 -'  19  0  ~/chiner_seq2seqex/dataset/vocab.en
 -'  20901  0  ~/chiner_seq2seqex/dataset/test.en
 -'  210  0  ~/chiner_seq2seqex/dataset/test.en
--'  1  0  ~/chiner_seq2seqex/seq2seqex.py
 -'  87  0  ~/chiner_seq2seqex/seq2seqex.py
 -'  70  0  ~/chiner_seq2seqex/chainerex.ipynb
 -'  1  0  ~/chiner_seq2seqex/chainerex.ipynb
 -'  10  0  ~/chiner_seq2seqex/dataset/train.en
--'  1  0  ~/chiner_seq2seqex/dataset/train.en
 -'  8  0  ~/chiner_seq2seqex
 -'  115  0  ~/chiner_seq2seqex/doubleLSTM.py
 -'  1  0  ~/chiner_seq2seqex/doubleLSTM.py
@@ -140,56 +190,95 @@ $
 -'  1  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
 -'  13  0  ~/chiner_seq2seq/dataset/pncKyotoAll.en
 -'  1  0  ~/chiner_seq2seq/dataset/pncKyotoAll.en
--'  1  0  ~/chiner_seq2seq/dataset/train.jp
--'  119  0  ~/chiner_seq2seqex/mylog.txt
--'  29  0  ~/chiner_seq2seqex/mylog.txt
--'  40  0  ~/chiner_seq2seqex/result/log
--'  1  0  ~/chiner_seq2seqex/dataset/inter
--'  1  0  ~/chiner_seq2seqex/dataset/sepalate_train.en
--'  6  36  ~/chiner_seq2seqex/dataset/train.en
--'  83  0  ~/chiner_seq2seq/result/100_500/snapshot_epoch-99
--'  1  0  ~/chiner_seq2seq/result/100_500/snapshot_epoch-99
--'  158  0  ~/chiner_seq2seqex/dataset/train.en
--'  1  0  ~/chiner_seq2seqex/dataset/train..
--'  1144  0  ~/chiner_seq2seqex/mylog.txt
--'  4013  0  ~/chiner_seq2seqex/mylog.txt
--'  1  0  ~/chiner_seq2seqex/seq2seqex
--'  40000  0  ~/chiner_seq2seqex/dataset/vocab.jp
--'  1  0  ~/chiner_seq2seqex/dataset/vocab.jp
--'  40000  0  ~/chiner_seq2seqex/dataset/vocab.en
--'  429519  0  ~/chiner_seq2seqex/dataset/train.jp
--'  1  0  ~/chiner_seq2seqex/dataset/train.jp
--'  429518  0  ~/chiner_seq2seqex/dataset/train.en
--'  86  4  ~/chiner_seq2seqex/dataset/wmt_preprocess.py
--'  1  0  ~/chiner_seq2seqex/dataset/wmt_preprocess.py
--'  64  4  ~/chiner_seq2seqex/dataset/wmt_preprocess.py
--'  11  0  ~/chiner_seq2seqex/dataset/wmt_preprocess.py
--'  1  0  ~/chiner_seq2seqex/dataset/test.j@
--'  429519  0  ~/chiner_seq2seqex/dataset/tmp/ParsedContextLongCuttedAll.en
--'  1  0  ~/chiner_seq2seqex/dataset/tmp/ParsedContextLongCuttedAll.en
--'  1  2  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  429519  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  429519  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
--'  429520  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  429520  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
--'  429506  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
--'  653926  0  ~/chiner_seq2seqex/dataset/interjp
--'  1  0  ~/chiner_seq2seqex/dataset/interjp
--'  653926  0  ~/chiner_seq2seqex/dataset/interen
--'  1  0  ~/chiner_seq2seqex/dataset/interen
--'  429479  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  429516  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
--'  293227  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.en
--'  1  0  ~/chiner_seq2seqex/dataset/testen
--'  429519  0  ~/chiner_seq2seqex/dataset/testen
--'  1  2  ~/chiner_seq2seqex/dataset/testjp
--'  429519  0  ~/chiner_seq2seqex/dataset/testjp
--'  293227  62  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  9  55  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  293223  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
--'  293215  0  ~/chiner_seq2seqex/dataset/ParsedContextLongCuttedAll.jp
 
 # ファイル内マークの履歴 (新しいものから古いもの):
+
+> ~/chiner_seq2seq/translate.txt
+	"	1	0
+
+> ~/chiner_seq2seq/dataset/test.jp
+	"	93	0
+
+> ~/chiner_seq2seqex/translate.txt
+	"	119	0
+
+> ~/chiner_seq2seqex/validation.py
+	"	411	0
+	^	409	0
+	.	411	0
+	+	1	14
+	+	411	0
+
+> ~/chiner_seq2seq/validation.py
+	"	264	0
+
+> ~/chiner_seq2seqex/seq2seqex.py
+	"	360	81
+	^	360	82
+	.	360	83
+	+	1	0
+	+	1	0
+	+	283	59
+	+	360	83
+
+> ~/chiner_seq2seqex/result/translate.txt
+	"	9746	0
+
+> ~/chiner_seq2seq/result/100_500/log
+	"	1	0
+
+> ~/chiner_seq2seqex/tra
+	"	1	0
+
+> ~/chiner_seq2seqex/result/log
+	"	112	0
+
+> ~/chiner_seq2seqex/a
+	"	99	0
+
+> ~/chiner_seq2seqex/result/bleu.csv
+	"	1	0
+
+> ~/chiner_seq2seqex/dataset/ttrain.jp
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/chiner_seq2seqex/dataset/ttrain.en
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/chiner_seq2seqex/dataset/test.en
+	"	21456	104
+	^	2	7
+	.	2	6
+	+	14	0
+	+	2	6
+
+> ~/chiner_seq2seqex/vocab.en
+	"	2585	1
+	.	40000	0
+	+	40000	0
+
+> ~/chiner_seq2seqex/dataset/test.jp
+	"	2	2
+	^	2	3
+	.	2	2
+	+	14	0
+	+	2	0
+	+	4	0
+	+	2	2
+
+> ~/chiner_seq2seqex/dataset/train.en
+	"	429519	0
+	^	16	108
+	.	16	0
+	+	6	37
+	+	16	0
+
+> ~/chiner_seq2seqex/result/mylog.txt
+	"	64	0
 
 > ~/.gitignore
 	"	1	0
@@ -210,19 +299,6 @@ $
 	+	1	0
 	+	2	0
 
-> ~/chiner_seq2seqex/result/mylog.txt
-	"	63	0
-
-> ~/chiner_seq2seqex/dataset/test.jp
-	"	21456	0
-	.	14	0
-	+	14	0
-
-> ~/chiner_seq2seqex/dataset/test.en
-	"	21456	0
-	.	14	0
-	+	14	0
-
 > ~/chiner_seq2seqex/mylog.txt
 	"	1687	0
 	^	1650	0
@@ -232,30 +308,14 @@ $
 > ~/chiner_seq2seqex/untitled.txt
 	"	1	0
 
-> ~/chiner_seq2seqex/result/log
-	"	1	0
-
 > ~/chiner_seq2seqex/result/mylot.txt
 	"	13	0
 
 > ~/chiner_seq2seqex/dataset/vocab.en
 	"	5	0
 
-> ~/chiner_seq2seqex/seq2seqex.py
-	"	1	0
-	.	1	0
-	+	1	0
-	+	1	0
-
 > ~/chiner_seq2seqex/chainerex.ipynb
 	"	70	0
-
-> ~/chiner_seq2seqex/dataset/train.en
-	"	10	0
-	^	16	108
-	.	16	0
-	+	6	37
-	+	16	0
 
 > ~/chiner_seq2seqex/doubleLSTM.py
 	"	115	0
@@ -697,78 +757,4 @@ $
 	+	14	36
 
 > ~/encdec/gene
-	"	1	0
-
-> ~/dataset/generate.txt
-	"	1	0
-
-> ~/dataset/nctrain_en.txt
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/dataset/train_ja.txt
-	"	103058	0
-
-> ~/dataset/train_en.txt
-	"	111378	0
-
-> ~/dataset/test_en.txt
-	"	30	0
-	^	41	88
-	.	41	87
-	+	2	0
-	+	1	175
-	+	2	97
-	+	3	70
-	+	4	146
-	+	5	139
-	+	6	116
-	+	7	93
-	+	9	139
-	+	10	54
-	+	12	144
-	+	13	129
-	+	15	61
-	+	17	86
-	+	19	138
-	+	20	198
-	+	21	113
-	+	23	59
-	+	24	53
-	+	25	130
-	+	26	59
-	+	28	81
-	+	30	196
-	+	31	122
-	+	33	122
-	+	35	83
-	+	36	181
-	+	37	205
-	+	38	145
-	+	40	37
-	+	41	87
-
-> ~/dataset/all.en
-	"	111397	0
-
-> ~/dataset/all.ja
-	"	111397	0
-
-> ~/dataset/all_ja
-	"	1	0
-
-> ~/dataset/all_ja.txt
-	"	14	0
-
-> ~/expriment/util/generators.py
-	"	24	19
-
-> ~/dataset/all_en.txt
-	"	111399	0
-
-> ~/dataset/all_
-	"	1	0
-
-> ~/dataset/train.en
 	"	1	0

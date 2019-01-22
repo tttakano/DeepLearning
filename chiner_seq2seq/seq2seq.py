@@ -199,23 +199,23 @@ def calculate_unknown_ratio(data):
 
 def main():
     parser = argparse.ArgumentParser(description='Chainer example: seq2seq')
-    parser.add_argument('--SOURCE', default = "./dataset/pncKyotoAll.en", help='source sentence list')
-    parser.add_argument('--TARGET', default = "./dataset/pncKyotoAll.jp",help='target sentence list')
-    parser.add_argument('--SOURCE_VOCAB', default = "./dataset/vocab.en",help='source vocabulary file')
-    parser.add_argument('--TARGET_VOCAB', default = "./dataset/vocab.jp",help='target vocabulary file')
-    parser.add_argument('--validation-source', default = "./dataset/pncKyototes.en",
+    parser.add_argument('--SOURCE', default="./dataset/train.en", help='source sentence list')
+    parser.add_argument('--TARGET', default="./dataset/train.jp", help='target sentence list')
+    parser.add_argument('--SOURCE_VOCAB', default="./dataset/vocab.en", help='source vocabulary file')
+    parser.add_argument('--TARGET_VOCAB', default="./dataset/vocab.jp", help='target vocabulary file')
+    parser.add_argument('--validation-source', default="./dataset/test.en",
                         help='source sentence list for validation')
-    parser.add_argument('--validation-target', default = "./dataset/pncKyototes.jp",
+    parser.add_argument('--validation-target', default="./dataset/test.jp",
                         help='target sentence list for validation')
-    parser.add_argument('--batchsize', '-b', type=int, default=128,
+    parser.add_argument('--batchsize', '-b', type=int, default=64,
                         help='number of sentence pairs in each mini-batch')
-    parser.add_argument('--epoch', '-e', type=int, default=300,
+    parser.add_argument('--epoch', '-e', type=int, default=200,
                         help='number of sweeps over the dataset to train')
     parser.add_argument('--gpu', '-g', type=int, default=0,
                         help='GPU ID (negative value indicates CPU)')
     parser.add_argument('--resume', '-r', default='',
                         help='resume the training from snapshot')
-    parser.add_argument('--unit', '-u', type=int, default=500,
+    parser.add_argument('--unit', '-u', type=int, default=300,
                         help='number of units')
     parser.add_argument('--layer', '-l', type=int, default=3,
                         help='number of layers')
@@ -262,6 +262,10 @@ def main():
     source_words = {i: w for w, i in source_ids.items()}
 
     model = Seq2seq(args.layer, len(source_ids), len(target_ids), args.unit)
+    #add########################################
+    with open("./result/translate.txt", "w") as f:
+        f.write("")
+    #end########################################    
     if args.gpu >= 0:
         chainer.cuda.get_device(args.gpu).use()
         model.to_gpu(args.gpu)
@@ -281,7 +285,7 @@ def main():
          'elapsed_time']),
         trigger=(args.log_interval, 'iteration'))
     trainer.extend(extensions.PlotReport(['main/loss', 'validationl/main/loss'], x_key='epoch', file_name='loss.png')) #to plot
-    trainer.extend(extensions.snapshot(filename='snapshot_epoch-{.updater.epoch}'))
+    trainer.extend(extensions.snapshot(filename='snapshot_epoch-{.updater.epoch}'), trigger=(10, 'epoch'))
 
     if args.validation_source and args.validation_target:
         test_source = load_data(source_ids, args.validation_source)
@@ -302,15 +306,23 @@ def main():
 
         @chainer.training.make_extension()#per 1 epoch
         def translate(trainer):
-            source, target = test_data[numpy.random.choice(len(test_data))]
-            result = model.translate([model.xp.array(source)])[0]
-
-            source_sentence = ' '.join([source_words[x] for x in source])
-            target_sentence = ' '.join([target_words[y] for y in target])
-            result_sentence = ' '.join([target_words[y] for y in result])
-            print('# source : ' + source_sentence)
-            print('#  result : ' + result_sentence)
-            print('#  expect : ' + target_sentence)
+            start = numpy.random.choice(len(test_data) - args.batchsize)
+            test = test_data[start: start + args.batchsize]
+            source = [cuda.cupy.asarray(s) for s, _ in test]  # [[sentence1], [sentence2], [sentence3], ...]
+            target = [cuda.cupy.asarray(t) for _, t in test]
+            result = model.translate(source)
+            #add#######################################
+            with open("./result/translate.txt", "a") as f:
+                f.write("epoch = {0}{1}".format(train_iter.epoch, '\n'))
+                for b in range(args.batchsize):
+                    source_sentence = ' '.join([source_words[int(x)] for x in source[b]])
+                    target_sentence = ' '.join([target_words[int(y)] for y in target[b]])
+                    result_sentence = ' '.join([target_words[int(y)] for y in result[b]])
+                    f.write('# source[{0}] : {1}{2}'.format(b, source_sentence, '\n'))
+                    f.write('# result[{0}] : {1}{2}'.format(b, result_sentence, '\n'))
+                    f.write('# expect[{0}] : {1}{2}'.format(b, target_sentence, '\n'))
+                f.write('\n')
+            #end#######################################
 
         trainer.extend(
             translate, trigger=(args.validation_interval, 'iteration'))
@@ -318,6 +330,7 @@ def main():
             CalculateBleu(
                 model, test_data, 'validation/main/bleu', device=args.gpu),
             trigger=(args.validation_interval, 'iteration'))
+        trainer.extend(extensions.ProgressBar())        #add##################
 
     print('start training')
     trainer.run()

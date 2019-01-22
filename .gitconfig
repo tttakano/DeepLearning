@@ -1,3 +1,5 @@
 [user]
 	email = takanotetuto@gmail.com
 	name = tttakano
+[push]
+	default = simple
