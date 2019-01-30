@@ -1,27 +1,3 @@
-cd encdec/
-ls
-rm -rf 6000-*
-ls
-cd ../
-cd chiner_seq2seq
-ls
-cd result/
-ls
-rm -rf 500unit 600unit/
-ls
-df -h
-du -sh
-du -sh /*
-df -h
-cd
-ls
-du -h ./
-du -h --max-depth=1 /
-du -h ./ --max-depth=1 /
-df
-df -h
-ls
-python seq2seq.py > result/log.txt
 tmux a -t 0
 ls
 tmux ls
@@ -1998,3 +1974,27 @@ python seq2seq.py
 tmux ;s
 tmux ls
 tmux a -t 0
+ls
+cd chiner_seq2seq
+ls
+cd ../chiner_seq2seqex/
+ls
+convert loss.png loss.pdf
+sudo convert loss.png loss.pdf
+ls
+cd
+git add .
+sudo git add /
+sudo git add .
+git commit -m "add figure"
+git push
+sudo git push
+ls
+cd chiner_seq2seqex/
+ls
+open loss.pdf 
+sudo git add .
+git commit -m "add figure"
+sudo git push
+ls
+open loss.pdf 
